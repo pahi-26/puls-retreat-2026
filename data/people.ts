@@ -36,8 +36,21 @@ export const speakers: Speaker[] = [
     affiliation: "PRL, FAU Erlangen Nurnberg"
   },
   {
+    name: "Prof. Dr. Jens Harting",
+    affiliation:
+      "Helmholtz-Institut Erlangen-Nurnberg fur Erneuerbare Energien (HI ERN)"
+  },
+  {
+    name: "Prof. Dr. Kheya Sengupta",
+    affiliation: "Interdisciplinary Center of Nanoscience of Marseille - CNRS, France"
+  },
+  {
     name: "Prof. Dr. Marco Haumann",
     affiliation: "FAU Erlangen Nurnberg"
+  },
+  {
+    name: "Prof. Dr. Nicolas Vandewalle",
+    affiliation: "University of Liege, Liege, Belgium"
   },
   {
     name: "Dr. Olaf Brummel",

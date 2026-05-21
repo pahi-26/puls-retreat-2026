@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { themes } from "@/data/themes";
 
+const researchUrl = "https://www.puls.nat.fau.de/category/research/";
+
 function ThemeIcon({ index }: { index: number }) {
   const styles = [
     "from-[#dfeaff] to-white",
@@ -29,9 +31,12 @@ export default function Themes() {
         <h2 className="section-title">Four focal strands for an immersive interdisciplinary programme.</h2>
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {themes.map((theme, index) => (
-            <motion.article
+            <motion.a
               key={theme.title}
-              className="glass-panel group rounded-[2rem] p-6"
+              href={researchUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="glass-panel group block rounded-[2rem] p-6"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -8 }}
@@ -59,7 +64,7 @@ export default function Themes() {
               </div>
               <h3 className="mt-5 text-xl">{theme.title}</h3>
               <p className="mt-3 text-sm text-ink/68">{theme.copy}</p>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
@@ -108,7 +113,7 @@ export default function Themes() {
                   Scientific Environments
                 </p>
                 <p className="mt-2 text-lg font-semibold leading-7 text-ink/88">
-                  From cells to simulations, the retreat spans complementary ways of seeing living systems.
+                  From cells to simulations, the workshop spans complementary ways of seeing living systems.
                 </p>
               </div>
             </div>

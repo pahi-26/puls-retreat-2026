@@ -8,7 +8,7 @@ export default function Timeline() {
     <section id="programme" className="relative">
       <div className="section-shell">
         <p className="section-eyebrow">Programme Timeline</p>
-        <h2 className="section-title">A measured rhythm of talks, discussion, collaboration, and reflection.</h2>
+        <h2 className="section-title">Programme overview across the workshop dates.</h2>
         <div className="relative mt-14">
           <div className="absolute left-4 top-0 h-full w-px origin-top bg-gradient-to-b from-plum/10 via-plum/50 to-teal/30 md:left-1/2" />
           <div className="absolute left-4 top-0 h-full w-px origin-top animate-line-grow bg-gradient-to-b from-plum/30 via-plum to-teal md:left-1/2" />

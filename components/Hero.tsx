@@ -85,7 +85,7 @@ const researchCells = [
   {
     src: "/images/research/epithelial.png",
     alt: "Epithelial microscopy",
-    className: "right-[9%] bottom-[14%] h-24 w-24 md:h-34 md:w-34 lg:h-42 lg:w-42",
+    className: "right-[9%] bottom-[14%] h-24 w-24 md:h-36 md:w-36 lg:h-44 lg:w-44",
     delay: 1.5,
     opacity: "opacity-50"
   },
@@ -301,16 +301,18 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <p className="section-eyebrow">Interdisciplinary Scientific Retreat</p>
+            <p className="section-eyebrow">Interdisciplinary Scientific Workshop</p>
             <h1 className="mt-6 text-5xl font-medium leading-[0.95] sm:text-6xl lg:text-7xl">
-              Physics Underlying Life Sciences Retreat 2026
+              Physics Underlying Life Sciences Workshop 2026
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-ink/72 sm:text-xl">
               Zadar, Croatia • 9–13 October 2026
             </p>
             <p className="mt-8 max-w-2xl text-base text-ink/68 md:text-lg">
-              A calm, future-facing gathering for researchers exploring how
-              physical principles illuminate living systems.
+              An interdisciplinary workshop for researchers in biophysics,
+              computational chemistry, and related fields to share ideas,
+              deepen collaborations, and explore new directions in living,
+              active, and functional materials across the life sciences.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
@@ -323,7 +325,7 @@ export default function Hero() {
                 href="#about"
                 className="rounded-full border border-ink/12 bg-white/70 px-6 py-3 text-sm text-ink transition hover:-translate-y-0.5"
               >
-                Discover the Retreat
+                Discover the Workshop
               </a>
             </div>
           </motion.div>
@@ -354,7 +356,7 @@ export default function Hero() {
                 </p>
               </div>
               <div className="rounded-full border border-white/60 bg-white/55 px-4 py-2 text-xs uppercase tracking-[0.28em] text-ink/55">
-                Retreat 2026
+                Workshop 2026
               </div>
             </div>
             <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -374,7 +376,7 @@ export default function Hero() {
             </div>
             <div className="mt-8 grid gap-4 rounded-[1.75rem] border border-white/60 bg-white/45 p-5">
               <p className="text-sm uppercase tracking-[0.24em] text-ink/48">
-                Scientific Atmosphere
+                From the Lab
               </p>
               <div className="grid grid-cols-3 gap-3">
                 <div className="relative overflow-hidden rounded-2xl">

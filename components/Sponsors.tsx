@@ -17,7 +17,12 @@ export default function Sponsors() {
         >
           <p className="section-eyebrow">Scientific Lead & Organizers</p>
           <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-[2rem] border border-white/60 bg-gradient-to-br from-white/80 via-[#f7f2ff] to-[#e8f5f3] p-6 shadow-glow">
+            <a
+              href="https://www.puls.nat.fau.de/faudir/prof-dr-ana-suncana-smith/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-[2rem] border border-white/60 bg-gradient-to-br from-white/80 via-[#f7f2ff] to-[#e8f5f3] p-6 shadow-glow transition hover:-translate-y-1"
+            >
               <div className="flex items-center gap-4">
                 <div className="flex min-h-16 min-w-16 items-center justify-center rounded-2xl border border-white/70 bg-white/80">
                   <Image
@@ -39,7 +44,7 @@ export default function Sponsors() {
                 Scientific lead of the retreat and the main academic host for the
                 event.
               </p>
-            </div>
+            </a>
 
             <div className="grid gap-4">
               {organizers.map((person) => (

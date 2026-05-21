@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import PreviousEditions from "@/components/PreviousEditions";
 import Speakers from "@/components/Speakers";
 import Sponsors from "@/components/Sponsors";
 import Themes from "@/components/Themes";
@@ -18,6 +19,7 @@ export default function Home() {
       <Timeline />
       <Speakers />
       <Venue />
+      <PreviousEditions />
       <Sponsors />
       <Footer />
     </main>
