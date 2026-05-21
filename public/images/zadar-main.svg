@@ -1,0 +1,18 @@
+<svg width="1400" height="1750" viewBox="0 0 1400 1750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="1750" fill="url(#sky)"/>
+  <rect y="990" width="1400" height="760" fill="url(#sea)"/>
+  <path d="M0 1055C220 1012 410 1114 590 1072C770 1030 940 900 1120 928C1240 946 1328 1002 1400 1030V1180H0V1055Z" fill="#E9E0FF" fill-opacity="0.72"/>
+  <path d="M0 1170C170 1140 330 1260 510 1218C680 1180 820 1102 980 1116C1140 1130 1285 1215 1400 1248V1750H0V1170Z" fill="#9EC7C6" fill-opacity="0.62"/>
+  <path d="M250 910L500 710L640 860L815 640L1115 905V1040H250V910Z" fill="#FFF9FE" fill-opacity="0.8"/>
+  <defs>
+    <linearGradient id="sky" x1="700" y1="0" x2="700" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F0FF"/>
+      <stop offset="0.5" stop-color="#F7FAFF"/>
+      <stop offset="1" stop-color="#E8F6F4"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="700" y1="990" x2="700" y2="1750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B6D7D3"/>
+      <stop offset="1" stop-color="#F2F6FF"/>
+    </linearGradient>
+  </defs>
+</svg>

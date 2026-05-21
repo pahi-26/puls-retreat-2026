@@ -1,0 +1,12 @@
+{
+  "public": {
+    "provider": "github",
+    "remote": "public",
+    "url": "git@github.com:pahi-26/puls-retreat-2026.git"
+  },
+  "private": {
+    "provider": "gitlab",
+    "remote": "private",
+    "url": ""
+  }
+}
