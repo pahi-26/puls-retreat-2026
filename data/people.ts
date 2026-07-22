@@ -24,6 +24,11 @@ export const organizers: Person[] = [
     affiliation: "FAU Erlangen Nurnberg"
   },
   {
+    name: "Filip Novkoski",
+    role: "Post-doctoral Researcher • Organizer",
+    affiliation: "FAU Erlangen Nurnberg"
+  },
+  {
     name: "Sampanna Pahi",
     role: "Doctoral Researcher • Organizer • Website Owner",
     affiliation: "FAU Erlangen Nurnberg"
@@ -53,11 +58,19 @@ export const speakers: Speaker[] = [
     affiliation: "University of Liege, Liege, Belgium"
   },
   {
-    name: "Dr. Olaf Brummel",
+    name: "Dr. Etienne Loiseau",
+    affiliation: "Aix-Marseille University, CNRS, CINAM, France"
+  },
+  {
+    name: "Dr. Tanja Retzer",
     affiliation: "FAU Erlangen Nurnberg"
   },
   {
-    name: "Dr. Tanja Retzner",
+    name: "Dr. Christian Wick",
     affiliation: "FAU Erlangen Nurnberg"
+  },
+  {
+    name: "Dr. Piotr Nowakowski",
+    affiliation: "Institut Ruder Boskovic, Croatia"
   }
 ];
