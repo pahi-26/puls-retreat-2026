@@ -14,63 +14,62 @@ export type Person = {
 export const supervisor: Person = {
   name: "Ana-Sunčana Smith",
   role: "Prof. Dr. • Scientific Lead",
-  affiliation: "FAU Erlangen Nurnberg"
+  affiliation: "FAU Erlangen-Nürnberg, Germany"
 };
 
 export const organizers: Person[] = [
   {
     name: "Siddhant Mohapatra",
     role: "Post-Doctoral Researcher • Organizer",
-    affiliation: "FAU Erlangen Nurnberg"
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
   {
     name: "Filip Novkoski",
     role: "Post-doctoral Researcher • Organizer",
-    affiliation: "FAU Erlangen Nurnberg"
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
   {
     name: "Sampanna Pahi",
     role: "Doctoral Researcher • Organizer • Website Owner",
-    affiliation: "FAU Erlangen Nurnberg"
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
   }
 ];
 
 export const speakers: Speaker[] = [
   {
     name: "Prof. Dr. Andreas Maier",
-    affiliation: "PRL, FAU Erlangen Nurnberg"
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
   {
     name: "Prof. Dr. Jens Harting",
-    affiliation:
-      "Helmholtz-Institut Erlangen-Nurnberg fur Erneuerbare Energien (HI ERN)"
+    affiliation: "Helmholtz-Institut Erlangen-Nürnberg für Erneuerbare Energien (HI ERN), Germany"
   },
   {
     name: "Prof. Dr. Kheya Sengupta",
-    affiliation: "Interdisciplinary Center of Nanoscience of Marseille - CNRS, France"
+    affiliation: "Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France"
   },
   {
     name: "Prof. Dr. Marco Haumann",
-    affiliation: "FAU Erlangen Nurnberg"
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
   {
     name: "Prof. Dr. Nicolas Vandewalle",
-    affiliation: "University of Liege, Liege, Belgium"
+    affiliation: "University of Liège, Belgium"
   },
   {
     name: "Dr. Etienne Loiseau",
-    affiliation: "Aix-Marseille University, CNRS, CINAM, France"
+    affiliation: "Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France"
   },
   {
     name: "Dr. Tanja Retzer",
-    affiliation: "FAU Erlangen Nurnberg"
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
   {
     name: "Dr. Christian Wick",
-    affiliation: "FAU Erlangen Nurnberg"
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
   {
     name: "Dr. Piotr Nowakowski",
-    affiliation: "Institut Ruder Boskovic, Croatia"
+    affiliation: "Institut Ruđer Bošković, Croatia"
   }
 ];
