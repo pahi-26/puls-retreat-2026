@@ -19,11 +19,6 @@ export const supervisor: Person = {
 
 export const organizers: Person[] = [
   {
-    name: "Siddhant Mohapatra",
-    role: "Post-Doctoral Researcher • Organizer",
-    affiliation: "FAU Erlangen-Nürnberg, Germany"
-  },
-  {
     name: "Filip Novkoski",
     role: "Post-doctoral Researcher • Organizer",
     affiliation: "FAU Erlangen-Nürnberg, Germany"
@@ -31,6 +26,11 @@ export const organizers: Person[] = [
   {
     name: "Sampanna Pahi",
     role: "Doctoral Researcher • Organizer • Website Owner",
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
+  },
+  {
+    name: "Siddhant Mohapatra",
+    role: "Post-Doctoral Researcher • Organizer",
     affiliation: "FAU Erlangen-Nürnberg, Germany"
   }
 ];
@@ -57,19 +57,19 @@ export const speakers: Speaker[] = [
     affiliation: "University of Liège, Belgium"
   },
   {
-    name: "Dr. Etienne Loiseau",
-    affiliation: "Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France"
-  },
-  {
-    name: "Dr. Tanja Retzer",
-    affiliation: "FAU Erlangen-Nürnberg, Germany"
-  },
-  {
     name: "Dr. Christian Wick",
     affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
   {
+    name: "Dr. Etienne Loiseau",
+    affiliation: "Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France"
+  },
+  {
     name: "Dr. Piotr Nowakowski",
     affiliation: "Institut Ruđer Bošković, Croatia"
+  },
+  {
+    name: "Dr. Tanja Retzer",
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
   }
 ];
