@@ -32,7 +32,6 @@ export default function PreviousEditions() {
                 {edition.location}
               </p>
               <div className="mt-5 h-px bg-gradient-to-r from-ink/10 to-transparent" />
-              <p className="mt-5 text-sm text-ink/66">{edition.note}</p>
             </motion.article>
           ))}
         </div>
