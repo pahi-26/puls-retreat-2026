@@ -28,8 +28,8 @@ export default function Themes() {
     <section id="themes" className="relative">
       <div className="section-shell">
         <p className="section-eyebrow">Scientific Themes</p>
-        <h2 className="section-title">Three focal interdisciplinary fields.</h2>
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <h2 className="section-title">Three focal interdisciplinary fields</h2>
+        <div className="mt-12 grid gap-5 grid-cols-1">
           {themes.map((theme, index) => (
             <motion.a
               key={theme.title}
@@ -67,6 +67,7 @@ export default function Themes() {
             </motion.a>
           ))}
         </div>
+        {/*
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -119,6 +120,7 @@ export default function Themes() {
             </div>
           </motion.div>
         </div>
+        */}
       </div>
     </section>
   );
