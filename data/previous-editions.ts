@@ -8,7 +8,7 @@ export const previousEditions: PreviousEdition[] = [
   {
     year: "2018",
     title: "PULS Retreat 2018",
-    location: "Krasno",
+    location: "Krasno, Croatia",
   },
   {
     year: "2022",

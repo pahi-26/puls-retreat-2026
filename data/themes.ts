@@ -14,17 +14,24 @@ export const themes = [
     imageClassName: "object-contain object-center scale-[0.82]"
   },
   {
-    title: "Scientific Discussion Sessions",
-    copy: "Dedicated space for deeper synthesis, critique, and collaborative interpretation.",
-    image: "/images/research/Picture4.png",
-    alt: "Scientific simulation system image",
-    imageClassName: "object-contain object-center scale-[0.92]"
+    title: "Robotics and Soft Active Matter",
+    copy: "Designing and building robots that can interact with and adapt to their environment.",
+    image: "/images/research/Bot_tissue.png",
+    alt: "A macroscopic assembly of robotized cells",
+    imageClassName: "object-cover object-center scale-100"
   },
-  {
-    title: "Early Career Research Exchange",
-    copy: "Creating visibility, dialogue, and shared momentum across emerging research paths.",
-    image: "/images/research/Picture1.png",
-    alt: "Molecular exchange visualization",
-    imageClassName: "object-contain object-center scale-[0.78]"
-  }
+  // {
+  //   title: "Scientific Discussion Sessions",
+  //   copy: "Dedicated space for deeper synthesis, critique, and collaborative interpretation.",
+  //   image: "/images/research/Picture4.png",
+  //   alt: "Scientific simulation system image",
+  //   imageClassName: "object-contain object-center scale-[0.92]"
+  // },
+  // {
+  //   title: "Early Career Research Exchange",
+  //   copy: "Creating visibility, dialogue, and shared momentum across emerging research paths.",
+  //   image: "/images/research/Picture1.png",
+  //   alt: "Molecular exchange visualization",
+  //   imageClassName: "object-contain object-center scale-[0.78]"
+  // }
 ] as const;

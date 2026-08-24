@@ -28,7 +28,7 @@ export const programme: ProgrammeDay[] = [
           "Participants converge from travel into the opening retreat setting."
       },
       {
-        title: "Introductory talk (Ana)",
+        title: "Introductory talk (18:00-19:00)",
         detail:
           "Opening scientific orientation and framing for the interdisciplinary week ahead."
       }

@@ -40,10 +40,10 @@ export const speakers: Speaker[] = [
     name: "Prof. Dr. Andreas Maier",
     affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
-  {
-    name: "Prof. Dr. Jens Harting",
-    affiliation: "Helmholtz-Institut Erlangen-Nürnberg für Erneuerbare Energien (HI ERN), Germany"
-  },
+  // {
+  //   name: "Prof. Dr. Jens Harting",
+  //   affiliation: "Helmholtz-Institut Erlangen-Nürnberg für Erneuerbare Energien (HI ERN), Germany"
+  // },
   {
     name: "Prof. Dr. Kheya Sengupta",
     affiliation: "Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France"
