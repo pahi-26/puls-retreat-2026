@@ -29,7 +29,7 @@ export default function Themes() {
       <div className="section-shell">
         <p className="section-eyebrow">Scientific Themes</p>
         <h2 className="section-title">Three focal interdisciplinary fields</h2>
-        <div className="mt-12 grid gap-5 grid-cols-1">
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
           {themes.map((theme, index) => (
             <motion.a
               key={theme.title}
