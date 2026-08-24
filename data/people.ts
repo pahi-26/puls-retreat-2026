@@ -37,6 +37,10 @@ export const organizers: Person[] = [
 
 export const speakers: Speaker[] = [
   {
+    name: "Prof. Dr. Marco Haumann",
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
+  },
+  {
     name: "Prof. Dr. Andreas Maier",
     affiliation: "FAU Erlangen-Nürnberg, Germany"
   },
@@ -49,16 +53,12 @@ export const speakers: Speaker[] = [
     affiliation: "Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France"
   },
   {
-    name: "Prof. Dr. Marco Haumann",
-    affiliation: "FAU Erlangen-Nürnberg, Germany"
-  },
-  {
     name: "Prof. Dr. Nicolas Vandewalle",
     affiliation: "University of Liège, Belgium"
   },
   {
-    name: "Dr. Christian Wick",
-    affiliation: "FAU Erlangen-Nürnberg, Germany"
+    name: "Dr. Sara Kaliman",
+    affiliation: "Max-Planck-Institut für die Physik des Lichts, Germany"
   },
   {
     name: "Dr. Etienne Loiseau",
@@ -70,6 +70,10 @@ export const speakers: Speaker[] = [
   },
   {
     name: "Dr. Tanja Retzer",
+    affiliation: "FAU Erlangen-Nürnberg, Germany"
+  },
+  {
+    name: "Dr. Christian Wick",
     affiliation: "FAU Erlangen-Nürnberg, Germany"
   }
 ];

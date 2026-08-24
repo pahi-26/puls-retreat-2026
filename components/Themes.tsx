@@ -28,7 +28,7 @@ export default function Themes() {
     <section id="themes" className="relative">
       <div className="section-shell">
         <p className="section-eyebrow">Scientific Themes</p>
-        <h2 className="section-title">Four focal strands for an immersive interdisciplinary programme.</h2>
+        <h2 className="section-title">Three focal interdisciplinary fields.</h2>
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {themes.map((theme, index) => (
             <motion.a
