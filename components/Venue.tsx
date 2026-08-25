@@ -63,6 +63,7 @@ export default function Venue() {
               </div>
             </div>
             <div className="grid gap-4">
+              {/*
               <div className="glass-panel relative overflow-hidden rounded-[2rem] p-3">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
                   <Image
@@ -75,6 +76,7 @@ export default function Venue() {
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/24 via-transparent to-white/10" />
                 </div>
               </div>
+              */}
               <div className="glass-panel relative overflow-hidden rounded-[2rem] p-3">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
                   <Image
