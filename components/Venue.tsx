@@ -6,10 +6,19 @@ import { motion } from "framer-motion";
 const zadarImages = {
   waterfront:
     "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sea%20Organ%20on%20the%20waterfront%20of%20Zadar%2C%20Croatia%20%2848607630256%29.jpg",
-  oldTown:
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Town%2C%20Zadar%20%28P1080755%29.jpg",
+  // oldTown:
+  //   "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Town%2C%20Zadar%20%28P1080755%29.jpg",
   sunset:
     "https://commons.wikimedia.org/wiki/Special:FilePath/Sunset%20over%20St.%20Elias.png"
+};
+
+const hotelUrl = "https://hotel-kolovare.com/";
+
+const kolovareImages = {
+  exterior:
+    "https://hotel-kolovare.com/wp-content/uploads/2020/12/h4.jpg",
+  conferenceHall:
+    "https://hotel-kolovare.com/wp-content/uploads/2020/12/MAX_7204.jpg"
 };
 
 export default function Venue() {
@@ -23,15 +32,15 @@ export default function Venue() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="section-eyebrow">Venue / Zadar</p>
-            <h2 className="section-title">A Mediterranean setting for scientific reflection and exchange.</h2>
+            <p className="section-eyebrow">Venue</p>
+            <h2 className="section-title">Scientific exchange in a Mediterranean setting</h2>
             <p className="section-copy">
-              Zadar, Croatia
+              📍 Hotel Kolovare, Ul. Bože Peričića 14, 23000 Zadar, Croatia
             </p>
-            <p className="mt-4 max-w-xl text-base text-ink/70 md:text-lg">
+            {/* <p className="mt-4 max-w-xl text-base text-ink/70 md:text-lg">
               A historic Mediterranean coastal city where scientific exchange,
               interdisciplinary collaboration, and reflection meet.
-            </p>
+            </p> */}
           </motion.div>
 
           <motion.div
@@ -88,6 +97,67 @@ export default function Venue() {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <motion.a
+            href={hotelUrl}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.22 }}
+            transition={{ duration: 0.7 }}
+            className="glass-panel group relative block overflow-hidden rounded-[2rem] p-3"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
+              <Image
+                src={kolovareImages.exterior}
+                alt="Aerial view of Hotel Kolovare, its pool, and private beach in Zadar"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
+              <div className="absolute bottom-5 left-5">
+                <p className="text-sm uppercase tracking-[0.26em] text-white/74">
+                  Hotel Kolovare
+                </p>
+                <p className="mt-2 text-base text-white/90">
+                  Aerial view of the hotel, pool, and private beach
+                </p>
+              </div>
+            </div>
+          </motion.a>
+          <motion.a
+            href={hotelUrl}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.22 }}
+            transition={{ duration: 0.7, delay: 0.08 }}
+            className="glass-panel group relative block overflow-hidden rounded-[2rem] p-3"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
+              <Image
+                src={kolovareImages.conferenceHall}
+                alt="Conference hall at Hotel Kolovare set up for an event"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
+              <div className="absolute bottom-5 left-5">
+                <p className="text-sm uppercase tracking-[0.26em] text-white/74">
+                  Hotel Kolovare
+                </p>
+                <p className="mt-2 text-base text-white/90">
+                  Conference hall, suited for the retreat programme
+                </p>
+              </div>
+            </div>
+          </motion.a>
         </div>
       </div>
     </section>
