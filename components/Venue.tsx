@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 const zadarImages = {
   waterfront:
     "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sea%20Organ%20on%20the%20waterfront%20of%20Zadar%2C%20Croatia%20%2848607630256%29.jpg",
-  // oldTown:
-  //   "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Town%2C%20Zadar%20%28P1080755%29.jpg",
+  oldTown:
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Town%2C%20Zadar%20%28P1080755%29.jpg",
   sunset:
     "https://commons.wikimedia.org/wiki/Special:FilePath/Sunset%20over%20St.%20Elias.png"
 };
@@ -18,7 +18,11 @@ const kolovareImages = {
   exterior:
     "https://hotel-kolovare.com/wp-content/uploads/2020/12/h4.jpg",
   conferenceHall:
-    "https://hotel-kolovare.com/wp-content/uploads/2020/12/MAX_7204.jpg"
+    "https://hotel-kolovare.com/wp-content/uploads/2020/12/MAX_7204.jpg",
+  lobby:
+    "https://hotel-kolovare.com/wp-content/uploads/2020/12/h1.jpg",
+  interior:
+    "https://hotel-kolovare.com/wp-content/uploads/2020/12/h3.jpg"
 };
 
 export default function Venue() {
@@ -60,10 +64,12 @@ export default function Venue() {
                   className="object-cover object-center transition duration-700 hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
+                <p className="absolute bottom-5 left-5 text-sm uppercase tracking-[0.26em] text-white/90">
+                  Beachfront
+                </p>
               </div>
             </div>
             <div className="grid gap-4">
-              {/*
               <div className="glass-panel relative overflow-hidden rounded-[2rem] p-3">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
                   <Image
@@ -74,9 +80,11 @@ export default function Venue() {
                     className="object-cover object-center transition duration-700 hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/24 via-transparent to-white/10" />
+                  <p className="absolute bottom-5 left-5 text-sm uppercase tracking-[0.26em] text-white/90">
+                    Old Town
+                  </p>
                 </div>
               </div>
-              */}
               <div className="glass-panel relative overflow-hidden rounded-[2rem] p-3">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
                   <Image
@@ -87,21 +95,16 @@ export default function Venue() {
                     className="object-cover object-center transition duration-700 hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/36 via-transparent to-transparent" />
-                  <div className="absolute bottom-5 left-5 max-w-[18rem]">
-                    <p className="text-sm uppercase tracking-[0.26em] text-white/74">
-                      Retreat Atmosphere
-                    </p>
-                    <p className="mt-3 text-lg text-white/90">
-                      Coastal light, historic texture, and quiet space for ideas to deepen.
-                    </p>
-                  </div>
+                  <p className="absolute bottom-5 left-5 text-sm uppercase tracking-[0.26em] text-white/90">
+                    Sunset in Zadar
+                  </p>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
           <motion.a
             href={hotelUrl}
             target="_blank"
@@ -110,25 +113,20 @@ export default function Venue() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.22 }}
             transition={{ duration: 0.7 }}
-            className="glass-panel group relative block overflow-hidden rounded-[2rem] p-3"
+            className="glass-panel group relative block overflow-hidden rounded-[2rem] p-2"
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
               <Image
                 src={kolovareImages.exterior}
                 alt="Aerial view of Hotel Kolovare, its pool, and private beach in Zadar"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
-              <div className="absolute bottom-5 left-5">
-                <p className="text-sm uppercase tracking-[0.26em] text-white/74">
-                  Hotel Kolovare
-                </p>
-                <p className="mt-2 text-base text-white/90">
-                  Aerial view of the hotel, pool, and private beach
-                </p>
-              </div>
+              <p className="absolute bottom-3 left-3 text-xs uppercase tracking-[0.2em] text-white/90">
+                Aerial view of the hotel
+              </p>
             </div>
           </motion.a>
           <motion.a
@@ -138,26 +136,69 @@ export default function Venue() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.22 }}
-            transition={{ duration: 0.7, delay: 0.08 }}
-            className="glass-panel group relative block overflow-hidden rounded-[2rem] p-3"
+            transition={{ duration: 0.7, delay: 0.06 }}
+            className="glass-panel group relative block overflow-hidden rounded-[2rem] p-2"
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
               <Image
                 src={kolovareImages.conferenceHall}
                 alt="Conference hall at Hotel Kolovare set up for an event"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
-              <div className="absolute bottom-5 left-5">
-                <p className="text-sm uppercase tracking-[0.26em] text-white/74">
-                  Hotel Kolovare
-                </p>
-                <p className="mt-2 text-base text-white/90">
-                  Conference hall, suited for the retreat programme
-                </p>
-              </div>
+              <p className="absolute bottom-3 left-3 text-xs uppercase tracking-[0.2em] text-white/90">
+                Conference Hall
+              </p>
+            </div>
+          </motion.a>
+          <motion.a
+            href={hotelUrl}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.22 }}
+            transition={{ duration: 0.7, delay: 0.12 }}
+            className="glass-panel group relative block overflow-hidden rounded-[2rem] p-2"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
+              <Image
+                src={kolovareImages.lobby}
+                alt="Lobby of Hotel Kolovare"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
+              <p className="absolute bottom-3 left-3 text-xs uppercase tracking-[0.2em] text-white/90">
+                Lobby
+              </p>
+            </div>
+          </motion.a>
+          <motion.a
+            href={hotelUrl}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.22 }}
+            transition={{ duration: 0.7, delay: 0.18 }}
+            className="glass-panel group relative block overflow-hidden rounded-[2rem] p-2"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
+              <Image
+                src={kolovareImages.interior}
+                alt="Interior of Hotel Kolovare"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
+              <p className="absolute bottom-3 left-3 text-xs uppercase tracking-[0.2em] text-white/90">
+                Interior
+              </p>
             </div>
           </motion.a>
         </div>
