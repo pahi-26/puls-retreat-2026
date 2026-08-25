@@ -9,7 +9,7 @@ const zadarImages = {
   oldTown:
     "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Town%2C%20Zadar%20%28P1080755%29.jpg",
   sunset:
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Sunset%20over%20St.%20Elias.png"
+    "https://i.natgeofe.com/n/6bc66ae6-76ef-4873-a4c0-e112789b6feb/Zadar1_3x4.jpeg"
 };
 
 const hotelUrl = "https://hotel-kolovare.com/";
@@ -124,9 +124,14 @@ export default function Venue() {
                 className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
-              <p className="absolute bottom-3 left-3 text-xs uppercase tracking-[0.2em] text-white/90">
-                Aerial view of the hotel
-              </p>
+              <div className="absolute bottom-3 left-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/74">
+                  Hotel Kolovare
+                </p>
+                <p className="mt-1 text-sm text-white/90">
+                  Aerial view of the hotel
+                </p>
+              </div>
             </div>
           </motion.a>
           <motion.a
@@ -148,9 +153,14 @@ export default function Venue() {
                 className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
-              <p className="absolute bottom-3 left-3 text-xs uppercase tracking-[0.2em] text-white/90">
-                Conference Hall
-              </p>
+              <div className="absolute bottom-3 left-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/74">
+                  Hotel Kolovare
+                </p>
+                <p className="mt-1 text-sm text-white/90">
+                  Conference Hall
+                </p>
+              </div>
             </div>
           </motion.a>
           <motion.a
@@ -172,9 +182,14 @@ export default function Venue() {
                 className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
-              <p className="absolute bottom-3 left-3 text-xs uppercase tracking-[0.2em] text-white/90">
-                Lobby
-              </p>
+              <div className="absolute bottom-3 left-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/74">
+                  Hotel Kolovare
+                </p>
+                <p className="mt-1 text-sm text-white/90">
+                  Lobby
+                </p>
+              </div>
             </div>
           </motion.a>
           <motion.a
@@ -196,9 +211,14 @@ export default function Venue() {
                 className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
-              <p className="absolute bottom-3 left-3 text-xs uppercase tracking-[0.2em] text-white/90">
-                Interior
-              </p>
+              <div className="absolute bottom-3 left-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/74">
+                  Hotel Kolovare
+                </p>
+                <p className="mt-1 text-sm text-white/90">
+                  Interior
+                </p>
+              </div>
             </div>
           </motion.a>
         </div>

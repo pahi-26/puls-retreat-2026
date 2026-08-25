@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "hotel-kolovare.com"
+      },
+      {
+        protocol: "https",
+        hostname: "i.natgeofe.com"
       }
     ]
   }
