@@ -8,8 +8,8 @@ const zadarImages = {
     "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sea%20Organ%20on%20the%20waterfront%20of%20Zadar%2C%20Croatia%20%2848607630256%29.jpg",
   oldTown:
     "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Town%2C%20Zadar%20%28P1080755%29.jpg",
-  sunset:
-    "https://i.natgeofe.com/n/6bc66ae6-76ef-4873-a4c0-e112789b6feb/Zadar1_3x4.jpeg"
+  cityCentre:
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20the%20historical%20center%20of%20Zadar%2C%20Croatia%20%2848607312728%29.jpg?width=1600"
 };
 
 const hotelUrl = "https://hotel-kolovare.com/";
@@ -88,15 +88,15 @@ export default function Venue() {
               <div className="glass-panel relative overflow-hidden rounded-[2rem] p-3">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
                   <Image
-                    src={zadarImages.sunset}
-                    alt="Sunset over St. Elias in Zadar"
+                    src={zadarImages.cityCentre}
+                    alt="Aerial view of the historical centre of Zadar, Croatia"
                     fill
                     sizes="(max-width: 768px) 100vw, 25vw"
                     className="object-cover object-center transition duration-700 hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/36 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
                   <p className="absolute bottom-5 left-5 text-sm uppercase tracking-[0.26em] text-white/90">
-                    Sunset in Zadar
+                    Zadar City Centre
                   </p>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export default function Venue() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
               <div className="absolute bottom-3 left-3">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/74">
+                <p className="text-xs uppercase tracking-[0.2em] text-white">
                   Hotel Kolovare
                 </p>
                 <p className="mt-1 text-sm text-white/90">
@@ -154,7 +154,7 @@ export default function Venue() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
               <div className="absolute bottom-3 left-3">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/74">
+                <p className="text-xs uppercase tracking-[0.2em] text-white">
                   Hotel Kolovare
                 </p>
                 <p className="mt-1 text-sm text-white/90">
@@ -183,7 +183,7 @@ export default function Venue() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
               <div className="absolute bottom-3 left-3">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/74">
+                <p className="text-xs uppercase tracking-[0.2em] text-white">
                   Hotel Kolovare
                 </p>
                 <p className="mt-1 text-sm text-white/90">
@@ -212,7 +212,7 @@ export default function Venue() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/28 via-transparent to-white/10" />
               <div className="absolute bottom-3 left-3">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/74">
+                <p className="text-xs uppercase tracking-[0.2em] text-white">
                   Hotel Kolovare
                 </p>
                 <p className="mt-1 text-sm text-white/90">
