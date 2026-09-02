@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const links = [
-  { label: "About", href: "#about" },
+  // { label: "About", href: "#about" }, // re-enable with the About section
   { label: "Themes", href: "#themes" },
   { label: "Programme", href: "#programme" },
   { label: "Speakers", href: "#speakers" },
