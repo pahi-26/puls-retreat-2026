@@ -96,7 +96,7 @@ export default function Venue() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
                   <p className="absolute bottom-5 left-5 text-sm uppercase tracking-[0.26em] text-white/90">
-                    Zadar City Centre
+                    City Centre
                   </p>
                 </div>
               </div>

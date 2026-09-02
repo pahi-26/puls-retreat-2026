@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image"; // re-enable with the image blocks below
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -31,6 +31,7 @@ export default function About() {
               transition={{ duration: 0.3 }}
               className="glass-panel rounded-[2rem] p-6"
             >
+              {/*
               <div className="relative h-48 overflow-hidden rounded-[1.5rem]">
                 <Image
                   src="/images/research/overlay7phalloid-betacat-nucl-63x.jpg"
@@ -41,7 +42,8 @@ export default function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-white/10" />
               </div>
-              <p className="mt-4 text-lg font-medium text-ink">Interdisciplinary Exchange</p>
+              */}
+              <p className="text-lg font-medium text-ink">Interdisciplinary Exchange</p>
               <p className="mt-2 text-sm text-ink/65">
                 Thoughtful discussion across scales, methods, and communities.
               </p>
@@ -52,6 +54,7 @@ export default function About() {
               transition={{ duration: 0.3 }}
               className="glass-panel rounded-[2rem] p-6 md:translate-y-10"
             >
+              {/*
               <div className="relative h-48 overflow-hidden rounded-[1.5rem]">
                 <Image
                   src="/images/research/epithelial.png"
@@ -62,7 +65,8 @@ export default function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-white/10" />
               </div>
-              <p className="mt-4 text-lg font-medium text-ink">Shared Scientific Atmosphere</p>
+              */}
+              <p className="text-lg font-medium text-ink">Shared Scientific Atmosphere</p>
               <p className="mt-2 text-sm text-ink/65">
                 Calm, focused, and designed for meaningful conversations.
               </p>

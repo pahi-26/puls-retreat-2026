@@ -9,12 +9,7 @@ export default function PreviousEditions() {
     <section id="previous-editions" className="relative">
       <div className="section-shell">
         <p className="section-eyebrow">Previous Editions</p>
-        <h2 className="section-title">A growing workshop series with a shared scientific history.</h2>
-        <p className="section-copy">
-          This section can document the earlier meetings in the PULS workshop
-          series and show how the scientific exchange has evolved across
-          editions.
-        </p>
+        <h2 className="section-title">A workshop series with a growing scientific history.</h2>
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {previousEditions.map((edition, index) => (
             <motion.article
