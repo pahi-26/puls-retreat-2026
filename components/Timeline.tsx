@@ -29,19 +29,11 @@ export default function Timeline() {
                 <div className="pl-10 md:pl-0">
                   <div className="glass-panel rounded-[2rem] p-6 md:p-7">
                     <div className="flex flex-wrap items-center gap-3">
-                      <p className="text-xs uppercase tracking-[0.26em] text-ink/48">
-                        {day.label}
-                      </p>
                       <span className="rounded-full bg-white/70 px-3 py-1 text-xs text-ink/55">
                         Day {index + 1}
                       </span>
                     </div>
                     <h3 className="mt-4 text-2xl">{day.date}</h3>
-                    <div
-                      className={`mt-5 rounded-[1.5rem] bg-gradient-to-r ${day.accent} p-4 text-sm text-ink/72`}
-                    >
-                      {day.overview}
-                    </div>
                     <div className="mt-5 space-y-3">
                       {day.sessions.map((session) => (
                         <details
