@@ -6,7 +6,8 @@ export type ProgrammeDay = {
     detail?: string;
     rooms?: {
       name: string;
-      detail: string;
+      talks: string[];
+      flashTalks?: string[];
     }[];
   }[];
 };
@@ -58,13 +59,13 @@ export const programme: ProgrammeDay[] = [
         rooms: [
           {
             name: "Conference Room 1: Robotics and Soft Active Matter",
-            detail:
-              "Prajol Shrestha, Jocelyn Dupont; flash talk by Gollapudi Prabhu Nithin."
+            talks: ["Prajol Shrestha", "Jocelyn Dupont"],
+            flashTalks: ["Gollapudi Prabhu Nithin"]
           },
           {
             name: "Conference Room 3: Computational Chemistry",
-            detail:
-              "Rupam Gayen, Bariscan Arican; flash talk by Preetam Sai Krothappalli."
+            talks: ["Rupam Gayen", "Bariscan Arican"],
+            flashTalks: ["Preetam Sai Krothappalli"]
           }
         ]
       },
@@ -84,12 +85,13 @@ export const programme: ProgrammeDay[] = [
         rooms: [
           {
             name: "Conference Room 1: Computational Chemistry",
-            detail:
-              "Rustam Durdyyev, Arsha Cherian; flash talk by Philippa Petersen."
+            talks: ["Rustam Durdyyev", "Arsha Cherian"],
+            flashTalks: ["Philippa Petersen"]
           },
           {
             name: "Conference Room 3: Biophysics",
-            detail: "Dorijan Vulić, Nicolas Miani; flash talk by Elina Wagner."
+            talks: ["Dorijan Vulić", "Nicolas Miani"],
+            flashTalks: ["Elina Wagner"]
           }
         ]
       },
@@ -170,12 +172,12 @@ export const programme: ProgrammeDay[] = [
         rooms: [
           {
             name: "Conference Room 1: Biophysics",
-            detail: "Narmin Abasova, Maja Milas."
+            talks: ["Narmin Abasova", "Maja Milas"]
           },
           {
             name: "Conference Room 3: Computational Chemistry",
-            detail:
-              "Lea Čolakić; flash talks by Christian Kreiger and Beatrice Anne Maquilan."
+            talks: ["Lea Čolakić"],
+            flashTalks: ["Christian Kreiger", "Beatrice Anne Maquilan"]
           }
         ]
       },

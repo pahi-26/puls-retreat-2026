@@ -3,6 +3,11 @@
 import { motion } from "framer-motion";
 import { programme } from "@/data/programme";
 
+function listNames(names: string[]) {
+  if (names.length < 2) return names.join("");
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
+
 export default function Timeline() {
   return (
     <section id="programme" className="relative">
@@ -61,11 +66,19 @@ export default function Timeline() {
                                 </p>
                               )}
                               {session.rooms?.map((room) => (
-                                <p key={room.name} className="mt-1 text-sm text-ink/60">
-                                  <span className="font-semibold text-ink/75">{room.name}</span>
-                                  {" — "}
-                                  {room.detail}
-                                </p>
+                                <div key={room.name} className="mt-2 text-sm text-ink/60">
+                                  <p className="font-semibold text-ink/75">{room.name}</p>
+                                  <p className="mt-0.5">
+                                    ECR {room.talks.length > 1 ? "talks" : "talk"} by{" "}
+                                    {listNames(room.talks)}
+                                  </p>
+                                  {room.flashTalks && (
+                                    <p className="mt-0.5">
+                                      Flash {room.flashTalks.length > 1 ? "talks" : "talk"} by{" "}
+                                      {listNames(room.flashTalks)}
+                                    </p>
+                                  )}
+                                </div>
                               ))}
                             </div>
                           </div>
