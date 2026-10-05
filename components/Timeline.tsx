@@ -40,50 +40,35 @@ export default function Timeline() {
                     </div>
                     <h3 className="mt-4 text-2xl">{day.date}</h3>
                     <div className="mt-5 divide-y divide-ink/8 overflow-hidden rounded-2xl border border-white/70 bg-white/55">
-                      {day.sessions.map((session) => {
-                        const isBreak = session.title === "Break" || session.title === "Lunch";
-                        return (
-                          <div
-                            key={session.time}
-                            className={`grid grid-cols-[5.75rem_1fr] gap-4 px-4 py-3 ${
-                              isBreak
-                                ? "bg-ink/[0.04] bg-[repeating-linear-gradient(135deg,rgba(23,37,84,0.05)_0_1px,transparent_1px_8px)]"
-                                : ""
-                            }`}
-                          >
-                            <p
-                              className={`text-sm tabular-nums ${isBreak ? "text-ink/35" : "text-ink/55"}`}
-                            >
-                              {session.time}
-                            </p>
-                            <div>
-                              <p className={`text-sm ${isBreak ? "text-ink/45" : "text-ink/80"}`}>
-                                {session.title}
-                              </p>
-                              {session.detail && (
-                                <p className={`mt-1 text-sm ${isBreak ? "text-ink/35" : "text-ink/60"}`}>
-                                  {session.detail}
+                      {day.sessions.map((session) => (
+                        <div
+                          key={session.time}
+                          className="grid grid-cols-[5.75rem_1fr] gap-4 px-4 py-3"
+                        >
+                          <p className="text-sm tabular-nums text-ink/55">{session.time}</p>
+                          <div>
+                            <p className="text-sm text-ink/80">{session.title}</p>
+                            {session.detail && (
+                              <p className="mt-1 text-sm text-ink/60">{session.detail}</p>
+                            )}
+                            {session.rooms?.map((room) => (
+                              <div key={room.name} className="mt-2 text-sm text-ink/60">
+                                <p className="font-semibold text-ink/75">{room.name}</p>
+                                <p className="mt-0.5">
+                                  ECR {room.talks.length > 1 ? "talks" : "talk"} by{" "}
+                                  {listNames(room.talks)}
                                 </p>
-                              )}
-                              {session.rooms?.map((room) => (
-                                <div key={room.name} className="mt-2 text-sm text-ink/60">
-                                  <p className="font-semibold text-ink/75">{room.name}</p>
+                                {room.flashTalks && (
                                   <p className="mt-0.5">
-                                    ECR {room.talks.length > 1 ? "talks" : "talk"} by{" "}
-                                    {listNames(room.talks)}
+                                    Flash {room.flashTalks.length > 1 ? "talks" : "talk"} by{" "}
+                                    {listNames(room.flashTalks)}
                                   </p>
-                                  {room.flashTalks && (
-                                    <p className="mt-0.5">
-                                      Flash {room.flashTalks.length > 1 ? "talks" : "talk"} by{" "}
-                                      {listNames(room.flashTalks)}
-                                    </p>
-                                  )}
-                                </div>
-                              ))}
-                            </div>
+                                )}
+                              </div>
+                            ))}
                           </div>
-                        );
-                      })}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

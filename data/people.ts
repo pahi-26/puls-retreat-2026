@@ -1,8 +1,6 @@
 export type Speaker = {
   name: string;
   affiliation: string;
-  topic?: string;
-  image?: string;
 };
 
 export type Person = {
