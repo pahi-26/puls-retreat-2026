@@ -3,7 +3,11 @@ export type ProgrammeDay = {
   sessions: {
     time: string;
     title: string;
-    detail: string;
+    detail?: string;
+    rooms?: {
+      name: string;
+      detail: string;
+    }[];
   }[];
 };
 
@@ -51,8 +55,18 @@ export const programme: ProgrammeDay[] = [
       {
         time: "11:20–12:15",
         title: "Parallel sessions",
-        detail:
-          "Conference Room 1 — Robotics and Soft Active Matter: Prajol Shrestha, Jocelyn Dupont; flash talk by Gollapudi Prabhu Nithin. Conference Room 3 — Computational Chemistry: Rupam Gayen, Bariscan Arican; flash talk by Preetam Sai Krothappalli."
+        rooms: [
+          {
+            name: "Conference Room 1: Robotics and Soft Active Matter",
+            detail:
+              "Prajol Shrestha, Jocelyn Dupont; flash talk by Gollapudi Prabhu Nithin."
+          },
+          {
+            name: "Conference Room 3: Computational Chemistry",
+            detail:
+              "Rupam Gayen, Bariscan Arican; flash talk by Preetam Sai Krothappalli."
+          }
+        ]
       },
       {
         time: "12:15–14:00",
@@ -67,8 +81,17 @@ export const programme: ProgrammeDay[] = [
       {
         time: "14:30–15:25",
         title: "Parallel sessions",
-        detail:
-          "Conference Room 1 — Computational Chemistry: Rustam Durdyyev, Arsha Cherian; flash talk by Philippa Petersen. Conference Room 3 — Biophysics: Dorijan Vulić, Nicolas Miani; flash talk by Elina Wagner."
+        rooms: [
+          {
+            name: "Conference Room 1: Computational Chemistry",
+            detail:
+              "Rustam Durdyyev, Arsha Cherian; flash talk by Philippa Petersen."
+          },
+          {
+            name: "Conference Room 3: Biophysics",
+            detail: "Dorijan Vulić, Nicolas Miani; flash talk by Elina Wagner."
+          }
+        ]
       },
       {
         time: "15:25–16:00",
@@ -124,7 +147,7 @@ export const programme: ProgrammeDay[] = [
       {
         time: "14:30–17:30",
         title: "Free time / leisure",
-        detail: "Free afternoon for leisure and informal exchange."
+        detail: "Free afternoon for leisure."
       }
     ]
   },
@@ -144,8 +167,17 @@ export const programme: ProgrammeDay[] = [
       {
         time: "10:00–10:40",
         title: "Parallel sessions",
-        detail:
-          "Conference Room 1 — Biophysics: Narmin Abasova, Maja Milas. Conference Room 3 — Computational Chemistry: Lea Čolakić; flash talks by Christian Kreiger and Beatrice Anne Maquilan."
+        rooms: [
+          {
+            name: "Conference Room 1: Biophysics",
+            detail: "Narmin Abasova, Maja Milas."
+          },
+          {
+            name: "Conference Room 3: Computational Chemistry",
+            detail:
+              "Lea Čolakić; flash talks by Christian Kreiger and Beatrice Anne Maquilan."
+          }
+        ]
       },
       {
         time: "10:45–11:20",

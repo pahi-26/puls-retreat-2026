@@ -43,7 +43,16 @@ export default function Timeline() {
                           <p className="text-sm tabular-nums text-ink/55">{session.time}</p>
                           <div>
                             <p className="text-sm text-ink/80">{session.title}</p>
-                            <p className="mt-1 text-sm text-ink/60">{session.detail}</p>
+                            {session.detail && (
+                              <p className="mt-1 text-sm text-ink/60">{session.detail}</p>
+                            )}
+                            {session.rooms?.map((room) => (
+                              <p key={room.name} className="mt-1 text-sm text-ink/60">
+                                <span className="font-semibold text-ink/75">{room.name}</span>
+                                {" — "}
+                                {room.detail}
+                              </p>
+                            ))}
                           </div>
                         </div>
                       ))}
