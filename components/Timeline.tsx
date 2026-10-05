@@ -34,19 +34,18 @@ export default function Timeline() {
                       </span>
                     </div>
                     <h3 className="mt-4 text-2xl">{day.date}</h3>
-                    <div className="mt-5 space-y-3">
+                    <div className="mt-5 divide-y divide-ink/8 overflow-hidden rounded-2xl border border-white/70 bg-white/55">
                       {day.sessions.map((session) => (
-                        <details
-                          key={session.title}
-                          className="rounded-2xl border border-white/70 bg-white/55 px-4 py-3 open:bg-white/75"
+                        <div
+                          key={session.time}
+                          className="grid grid-cols-[5.75rem_1fr] gap-4 px-4 py-3"
                         >
-                          <summary className="cursor-pointer list-none text-sm text-ink/75">
-                            {session.title}
-                          </summary>
-                          <p className="mt-3 border-t border-ink/8 pt-3 text-sm text-ink/60">
-                            {session.detail}
-                          </p>
-                        </details>
+                          <p className="text-sm tabular-nums text-ink/55">{session.time}</p>
+                          <div>
+                            <p className="text-sm text-ink/80">{session.title}</p>
+                            <p className="mt-1 text-sm text-ink/60">{session.detail}</p>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
