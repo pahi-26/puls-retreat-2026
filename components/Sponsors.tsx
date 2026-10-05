@@ -1,6 +1,5 @@
 "use client";
 
-// import Image from "next/image"; // re-enable when a portrait replaces the placeholder
 import { motion } from "framer-motion";
 import { organizers, supervisor } from "@/data/people";
 
@@ -23,17 +22,8 @@ export default function Sponsors() {
               rel="noreferrer"
               className="rounded-[2rem] border border-white/60 bg-gradient-to-br from-white/80 via-[#f7f2ff] to-[#e8f5f3] p-6 shadow-glow transition hover:-translate-y-1"
             >
-              <div className="flex items-center gap-4">
-                <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/70 bg-[radial-gradient(circle_at_22%_20%,_rgba(139,124,200,0.28),_transparent_24%),radial-gradient(circle_at_72%_30%,_rgba(106,166,161,0.24),_transparent_22%),linear-gradient(180deg,_rgba(249,244,255,0.96),_rgba(234,243,250,0.92)_45%,_rgba(255,255,255,0.82))] p-2 text-center">
-                  <span className="text-[10px] uppercase leading-3 tracking-[0.18em] text-ink/48">
-                    Portrait pending
-                  </span>
-                </div>
-                <div>
-                  <p className="section-eyebrow">Retreat Supervisor</p>
-                  <h3 className="mt-2 text-2xl">{supervisor.name}</h3>
-                </div>
-              </div>
+              <p className="section-eyebrow">Retreat Supervisor</p>
+              <h3 className="mt-2 text-2xl">{supervisor.name}</h3>
               <p className="mt-5 text-base text-ink/72">{supervisor.role}</p>
               <p className="mt-2 text-sm text-ink/60">{supervisor.affiliation}</p>
               <p className="mt-5 max-w-xl text-sm text-ink/68">

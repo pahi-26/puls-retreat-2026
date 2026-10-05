@@ -4,6 +4,7 @@ export type ProgrammeDay = {
     time: string;
     title: string;
     detail?: string;
+    talks?: string[];
     rooms?: {
       name: string;
       talks: string[];
@@ -45,13 +46,14 @@ export const programme: ProgrammeDay[] = [
       {
         time: "10:00–10:40",
         title: "Early-career researcher talks",
-        detail:
-          "Sanjay Vinod Kumar (Computational Chemistry) and Filip Novkoski (Robotics and Soft Active Matter)."
+        talks: [
+          "Sanjay Vinod Kumar (Computational Chemistry)",
+          "Filip Novkoski (Robotics and Soft Active Matter)"
+        ]
       },
       {
         time: "10:45–11:20",
-        title: "Break",
-        detail: "Scheduled break between sessions."
+        title: "Break"
       },
       {
         time: "11:20–12:15",
@@ -71,8 +73,7 @@ export const programme: ProgrammeDay[] = [
       },
       {
         time: "12:15–14:00",
-        title: "Lunch",
-        detail: "Lunch break."
+        title: "Lunch"
       },
       {
         time: "14:00–14:30",
@@ -97,8 +98,7 @@ export const programme: ProgrammeDay[] = [
       },
       {
         time: "15:25–16:00",
-        title: "Break",
-        detail: "Scheduled break between sessions."
+        title: "Break"
       },
       {
         time: "16:00–17:30",
@@ -123,12 +123,14 @@ export const programme: ProgrammeDay[] = [
       {
         time: "10:00–10:40",
         title: "Early-career researcher talks",
-        detail: "Sampanna Pahi (Computational Chemistry) and Madhura Ramani (Biophysics)."
+        talks: [
+          "Sampanna Pahi (Computational Chemistry)",
+          "Madhura Ramani (Biophysics)"
+        ]
       },
       {
         time: "10:45–11:20",
-        title: "Break",
-        detail: "Scheduled break between sessions."
+        title: "Break"
       },
       {
         time: "11:20–11:50",
@@ -139,12 +141,14 @@ export const programme: ProgrammeDay[] = [
       {
         time: "11:50–12:30",
         title: "Early-career researcher talks",
-        detail: "Mathis Grelier (Biophysics) and Siddhant Mohapatra (Robotics and Soft Active Matter)."
+        talks: [
+          "Mathis Grelier (Biophysics)",
+          "Siddhant Mohapatra (Robotics and Soft Active Matter)"
+        ]
       },
       {
         time: "12:35–14:30",
-        title: "Lunch",
-        detail: "Lunch break."
+        title: "Lunch"
       },
       {
         time: "14:30–17:30",
@@ -183,8 +187,7 @@ export const programme: ProgrammeDay[] = [
       },
       {
         time: "10:45–11:20",
-        title: "Break",
-        detail: "Scheduled break between sessions."
+        title: "Break"
       },
       {
         time: "11:20–12:30",
@@ -193,8 +196,7 @@ export const programme: ProgrammeDay[] = [
       },
       {
         time: "12:30–14:00",
-        title: "Lunch",
-        detail: "Lunch break."
+        title: "Lunch"
       },
       {
         time: "14:00–14:30",
@@ -219,18 +221,8 @@ export const programme: ProgrammeDay[] = [
       },
       {
         time: "10:10–12:10",
-        title: "Data Management",
-        detail: "Data management session led by PULS/IRB."
-      },
-      {
-        time: "12:10–13:30",
-        title: "Lunch",
-        detail: "Lunch break."
-      },
-      {
-        time: "14:30",
-        title: "Departure from Zadar",
-        detail: "Coordinated departure from the retreat venue."
+        title: "Data Management (only for PULS/IRB members)"
+        // detail: "Data management session led by PULS/IRB."
       }
     ]
   }
