@@ -66,8 +66,8 @@ export const programme: ProgrammeDay[] = [
           },
           {
             name: "Conference Room 3: Computational Chemistry",
-            talks: ["Rupam Gayen", "Bariscan Arican"],
-            flashTalks: ["Preetam Sai Krothappalli"]
+            talks: ["Rupam Gayen", "Rustam Durdyyev"],
+            flashTalks: ["Beatrice Anne Maquilan"]
           }
         ]
       },
@@ -81,27 +81,26 @@ export const programme: ProgrammeDay[] = [
         detail: "Dr. Christian Wick (FAU Erlangen-Nürnberg, Germany)."
       },
       {
-        time: "14:30–15:25",
+        time: "14:30–15:10",
         title: "Parallel sessions",
         rooms: [
           {
             name: "Conference Room 1: Computational Chemistry",
-            talks: ["Rustam Durdyyev", "Arsha Cherian"],
-            flashTalks: ["Philippa Petersen"]
+            talks: ["Arsha Cherian"],
+            flashTalks: ["Philippa Petersen", "Preetam Sai Krothappalli"]
           },
           {
             name: "Conference Room 3: Biophysics",
-            talks: ["Dorijan Vulić", "Nicolas Miani"],
-            flashTalks: ["Elina Wagner"]
+            talks: ["Nicolas Miani", "Dorijan Vulić"]
           }
         ]
       },
       {
-        time: "15:25–16:00",
+        time: "15:15–15:50",
         title: "Break"
       },
       {
-        time: "16:00–17:30",
+        time: "16:50–17:30",
         title: "Brainstorming session",
         detail: "Open discussion and brainstorming time for the group."
       }
@@ -171,26 +170,27 @@ export const programme: ProgrammeDay[] = [
         detail: "Dr. Piotr Nowakowski (Institut Ruđer Bošković, Croatia)."
       },
       {
-        time: "10:00–10:40",
+        time: "10:00–10:50",
         title: "Parallel sessions",
         rooms: [
           {
             name: "Conference Room 1: Biophysics",
-            talks: ["Narmin Abasova", "Maja Milas"]
+            talks: ["Narmin Abasova", "Maja Milas"],
+            flashTalks: ["Elina Wagner"]
           },
           {
             name: "Conference Room 3: Computational Chemistry",
-            talks: ["Lea Čolakić"],
-            flashTalks: ["Christian Kreiger", "Beatrice Anne Maquilan"]
+            talks: ["Lea Čolakić", "Bariscan Arican"],
+            flashTalks: ["Christian Kreiger"]
           }
         ]
       },
       {
-        time: "10:45–11:20",
+        time: "10:55–11:30",
         title: "Break"
       },
       {
-        time: "11:20–12:30",
+        time: "11:30–12:30",
         title: "Brainstorming session",
         detail: "Open discussion and brainstorming time for the group."
       },
