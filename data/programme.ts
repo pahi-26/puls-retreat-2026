@@ -151,9 +151,9 @@ export const programme: ProgrammeDay[] = [
         title: "Lunch"
       },
       {
-        time: "14:30–17:30",
-        title: "Free time / leisure",
-        detail: "Free afternoon for leisure."
+        time: "14:30–",
+        title: "Free time / leisure"
+        // detail: "Free afternoon for leisure."
       }
     ]
   },
@@ -221,7 +221,7 @@ export const programme: ProgrammeDay[] = [
       },
       {
         time: "10:10–12:10",
-        title: "Data Management (only for PULS/IRB members)"
+        title: "Data Management workshop (only for PULS/IRB members)"
         // detail: "Data management session led by PULS/IRB."
       }
     ]
