@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { programme } from "@/data/programme";
+import { programme, talkFormats } from "@/data/programme";
 
 function listNames(names: string[]) {
   if (names.length < 2) return names.join("");
@@ -14,6 +14,24 @@ export default function Timeline() {
       <div className="section-shell">
         <p className="section-eyebrow">Programme Timeline</p>
         <h2 className="section-title">Programme overview across the workshop dates.</h2>
+        <div className="glass-panel mt-10 max-w-xl overflow-hidden rounded-2xl">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-white/60 text-ink/75">
+              <tr>
+                <th className="px-4 py-3 font-semibold">Type of talk</th>
+                <th className="px-4 py-3 font-semibold">Duration</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-ink/8 bg-white/40 text-ink/65">
+              {talkFormats.map((format) => (
+                <tr key={format.type}>
+                  <td className="px-4 py-3">{format.type}</td>
+                  <td className="px-4 py-3 tabular-nums">{format.duration}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <div className="relative mt-14">
           <div className="absolute left-4 top-0 h-full w-px origin-top bg-gradient-to-b from-plum/10 via-plum/50 to-teal/30 md:left-1/2" />
           <div className="absolute left-4 top-0 h-full w-px origin-top animate-line-grow bg-gradient-to-b from-plum/30 via-plum to-teal md:left-1/2" />

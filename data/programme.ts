@@ -13,6 +13,12 @@ export type ProgrammeDay = {
   }[];
 };
 
+export const talkFormats = [
+  { type: "Invited talk", duration: "25 mins + 5 mins Q&A" },
+  { type: "Early career researcher (ECR) talk", duration: "15 mins + 5 mins Q&A" },
+  { type: "Flash talk", duration: "7 mins + 3 mins Q&A" }
+];
+
 export const programme: ProgrammeDay[] = [
   {
     date: "9 October 2026",
@@ -56,7 +62,7 @@ export const programme: ProgrammeDay[] = [
         title: "Break"
       },
       {
-        time: "11:20–12:15",
+        time: "11:20–12:10",
         title: "Parallel sessions",
         rooms: [
           {
