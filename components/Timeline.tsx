@@ -1,12 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { programme, talkFormats } from "@/data/programme";
-
-function listNames(names: string[]) {
-  if (names.length < 2) return names.join("");
-  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
-}
+import { breakoutGroups, programme, talkFormats } from "@/data/programme";
 
 export default function Timeline() {
   return (
@@ -31,6 +26,21 @@ export default function Timeline() {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="glass-panel mt-6 max-w-xl rounded-2xl p-4">
+          <p className="text-sm font-semibold text-ink/75">Breakout session groups</p>
+          <dl className="mt-3 grid gap-2 sm:grid-cols-2">
+            {breakoutGroups.map((group) => (
+              <div key={group.code} className="flex items-center gap-3">
+                <dt
+                  className={`w-12 shrink-0 rounded-md border border-ink/10 py-0.5 text-center text-xs font-semibold tracking-wide text-ink/80 ${group.tint}`}
+                >
+                  {group.code}
+                </dt>
+                <dd className="text-sm text-ink/65">{group.name}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
         <div className="relative mt-14">
           <div className="absolute left-4 top-0 h-full w-px origin-top bg-gradient-to-b from-plum/10 via-plum/50 to-teal/30 md:left-1/2" />
@@ -74,16 +84,35 @@ export default function Timeline() {
                                 {talk}
                               </p>
                             ))}
-                            {session.tracks?.map((track) => (
-                              <div key={track.name} className="mt-2 text-sm text-ink/60">
-                                <p className="font-semibold text-ink/75">{track.name}</p>
-                                {track.topic && <p className="mt-0.5 italic">{track.topic}</p>}
-                                {track.people && (
-                                  <p className="mt-0.5">{listNames(track.people)}</p>
-                                )}
-                              </div>
-                            ))}
                           </div>
+                          {session.tracks && (
+                            <div className="col-span-2 grid grid-cols-2 gap-1.5 sm:flex">
+                              {session.tracks.map((track) => (
+                                <div
+                                  key={track.group.code}
+                                  title={track.group.name}
+                                  className={`min-w-0 rounded-lg border border-ink/10 p-2 sm:flex-1 ${track.group.tint}`}
+                                >
+                                  <p className="text-xs font-semibold uppercase leading-snug tracking-wide text-ink/80">
+                                    {track.group.code}
+                                  </p>
+                                  {track.topic && (
+                                    <p className="mt-1 break-words text-xs italic leading-snug text-ink/70">
+                                      {track.topic}
+                                    </p>
+                                  )}
+                                  {track.people?.map((person) => (
+                                    <p
+                                      key={person}
+                                      className="mt-1 break-words text-xs leading-snug text-ink/60"
+                                    >
+                                      {person}
+                                    </p>
+                                  ))}
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>

@@ -6,11 +6,17 @@ export type ProgrammeDay = {
     detail?: string;
     talks?: string[];
     tracks?: {
-      name: string;
+      group: Group;
       topic?: string;
       people?: string[];
     }[];
   }[];
+};
+
+type Group = {
+  code: string;
+  name: string;
+  tint: string;
 };
 
 export const talkFormats = [
@@ -18,15 +24,17 @@ export const talkFormats = [
   { type: "Contributed talk", duration: "approx. 15 mins" }
 ];
 
-// Parallel group-session tracks (IM, Mem, Tiss, CC1–CC3 in the organisers' schedule)
+// Parallel group-session tracks, tinted with the same colours as the organisers' schedule
 const groups = {
-  im: "Robotics and Soft Active Matter",
-  mem: "Biophysics: Membranes",
-  tiss: "Biophysics: Tissues",
-  cc1: "Computational Chemistry 1",
-  cc2: "Computational Chemistry 2",
-  cc3: "Computational Chemistry 3"
-};
+  im: { code: "IM", name: "Intelligent Materials", tint: "bg-[#d6e6ff]" },
+  mem: { code: "MEM", name: "Biophysics: Membranes", tint: "bg-[#f3f8f6]" },
+  tiss: { code: "TISS", name: "Biophysics: Tissues", tint: "bg-[#efe1fb]" },
+  cc1: { code: "CC1", name: "Computational Chemistry 1", tint: "bg-[#fff4e5]" },
+  cc2: { code: "CC2", name: "Computational Chemistry 2", tint: "bg-[#fde2e4]" },
+  cc3: { code: "CC3", name: "Computational Chemistry 3", tint: "bg-[#e5e5e5]" }
+} satisfies Record<string, Group>;
+
+export const breakoutGroups: Group[] = Object.values(groups);
 
 export const programme: ProgrammeDay[] = [
   {
@@ -59,11 +67,11 @@ export const programme: ProgrammeDay[] = [
         time: "10:45–12:45",
         title: "Pilot breakout sessions",
         tracks: [
-          { name: groups.im, people: ["Nicolas Vandewalle", "Andreas Maier"] },
-          { name: groups.mem, people: ["Kheya Sengupta"] },
-          { name: groups.tiss, people: ["Ana-Sunčana Smith"] },
-          { name: groups.cc1, people: ["Christian Wick"] },
-          { name: groups.cc2, people: ["Rupam Gayen"] }
+          { group: groups.im, people: ["Nicolas Vandewalle", "Andreas Maier"] },
+          { group: groups.mem, people: ["Kheya Sengupta"] },
+          { group: groups.tiss, people: ["Ana-Sunčana Smith"] },
+          { group: groups.cc1, people: ["Christian Wick"] },
+          { group: groups.cc2, people: ["Rupam Gayen"] }
         ]
       },
       {
@@ -82,11 +90,11 @@ export const programme: ProgrammeDay[] = [
         time: "16:30–18:30",
         title: "Parallel breakout sessions",
         tracks: [
-          { name: groups.im, topic: "Many-body bots", people: ["Gollapudi Prabhu Nithin", "Prajol Shrestha"] },
-          { name: groups.mem, topic: "Actin waves", people: ["Nicolas Miani", "Dorijan Vulić"] },
-          { name: groups.tiss, topic: "Stretch", people: ["Mathis Grelier", "Madhura Ramani"] },
-          { name: groups.cc1, topic: "FRASCAL", people: ["Bariscan Arican", "Sampanna Pahi"] },
-          { name: groups.cc2, topic: "Milling paper drafting" }
+          { group: groups.im, topic: "Many-body bots", people: ["Gollapudi Prabhu Nithin", "Prajol Shrestha"] },
+          { group: groups.mem, topic: "Actin waves", people: ["Nicolas Miani", "Dorijan Vulić"] },
+          { group: groups.tiss, topic: "Stretch", people: ["Mathis Grelier", "Madhura Ramani"] },
+          { group: groups.cc1, topic: "FRASCAL", people: ["Bariscan Arican", "Sampanna Pahi"] },
+          { group: groups.cc2, topic: "Milling paper drafting" }
         ]
       },
       {
@@ -112,18 +120,18 @@ export const programme: ProgrammeDay[] = [
       },
       {
         time: "10:45–12:45",
-        title: "Parallel group sessions",
+        title: "Parallel breakout sessions",
         tracks: [
-          { name: groups.im, topic: "Cell", people: ["Jocelyn Dupont", "Siddhant Mohapatra"] },
-          { name: groups.mem, topic: "Patterning", people: ["Piotr Nowakowski", "Etienne Loiseau"] },
-          { name: groups.tiss, topic: "Nuclear response", people: ["Madhura Ramani", "Mathis Grelier"] },
+          { group: groups.im, topic: "Cell", people: ["Jocelyn Dupont", "Siddhant Mohapatra"] },
+          { group: groups.mem, topic: "Patterning", people: ["Piotr Nowakowski", "Etienne Loiseau"] },
+          { group: groups.tiss, topic: "Nuclear response", people: ["Madhura Ramani", "Mathis Grelier"] },
           {
-            name: groups.cc1,
+            group: groups.cc1,
             topic: "Particles in pores",
             people: ["Beatrice Anne Maquilan", "Rupam Gayen", "Rustam Durdyyev"]
           },
-          { name: groups.cc2, topic: "FRASCAL paper writing" },
-          { name: groups.cc3, topic: "Milling proposal drafting" }
+          { group: groups.cc2, topic: "FRASCAL paper writing" },
+          { group: groups.cc3, topic: "Milling proposal drafting" }
         ]
       },
       {
@@ -147,7 +155,7 @@ export const programme: ProgrammeDay[] = [
       {
         time: "18:00–19:00",
         title: "Parallel breakout session (continues over dinner)",
-        tracks: [{ name: groups.tiss, topic: "FK", people: ["Elina Wagner", "Narmin Abasova"] }]
+        tracks: [{ group: groups.tiss, topic: "FK", people: ["Elina Wagner", "Narmin Abasova"] }]
       },
       {
         time: "19:00–20:00",
@@ -175,12 +183,16 @@ export const programme: ProgrammeDay[] = [
         title: "Parallel breakout sessions",
         tracks: [
           {
-            name: `${groups.im} + ${groups.tiss}`,
+            group: {
+              code: `${groups.im.code} + ${groups.tiss.code}`,
+              name: `${groups.im.name} + ${groups.tiss.name}`,
+              tint: groups.im.tint
+            },
             people: ["Filip Novkoski", "Madhura Ramani", "Maja Milas", "Ana-Sunčana Smith"]
           },
-          { name: groups.mem, topic: "Group work" },
-          { name: groups.cc1, topic: "Chemprint", people: ["Mathis Grelier", "Philippa Petersen"] },
-          { name: groups.cc2, topic: "Group work" }
+          { group: groups.mem, topic: "Group work" },
+          { group: groups.cc1, topic: "Chemprint", people: ["Mathis Grelier", "Philippa Petersen"] },
+          { group: groups.cc2, topic: "Group work" }
         ]
       },
       {
@@ -203,7 +215,7 @@ export const programme: ProgrammeDay[] = [
       {
         time: "18:00–19:00",
         title: "Parallel breakout session (continues over dinner)",
-        tracks: [{ name: groups.cc1, topic: "Catalysis", people: ["Arsha Cherian", "Tanja Retzer"] }]
+        tracks: [{ group: groups.cc1, topic: "Catalysis", people: ["Arsha Cherian", "Tanja Retzer"] }]
       },
       {
         time: "19:00–20:00",
