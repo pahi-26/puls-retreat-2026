@@ -43,7 +43,7 @@ export const breakoutGroups: Group[] = Object.values(groups);
 export const arrivalDay = {
   day: "Friday, 9 October",
   sessions: [
-    { time: "18:00–19:00", title: "Introductory note" },
+    { time: "18:00–19:00", title: "Informal introductory note" },
     { time: "19:00–21:30", title: "Welcome cocktail + dinner" }
   ]
 };
@@ -72,7 +72,7 @@ export const slots: Slot[] = [
   },
   {
     time: "10:45–12:45",
-    note: "Pilot breakout sessions",
+    note: "Breakout sessions",
     cells: [
       {
         kind: "tracks",
