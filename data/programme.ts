@@ -5,19 +5,28 @@ export type ProgrammeDay = {
     title: string;
     detail?: string;
     talks?: string[];
-    rooms?: {
+    tracks?: {
       name: string;
-      talks: string[];
-      flashTalks?: string[];
+      topic?: string;
+      people?: string[];
     }[];
   }[];
 };
 
 export const talkFormats = [
-  { type: "Invited talk", duration: "25 mins + 5 mins Q&A" },
-  { type: "Early career researcher (ECR) talk", duration: "15 mins + 5 mins Q&A" },
-  { type: "Flash talk", duration: "7 mins + 3 mins Q&A" }
+  { type: "Invited talk", duration: "approx. 30 mins" },
+  { type: "Contributed talk", duration: "approx. 15 mins" }
 ];
+
+// Parallel group-session tracks (IM, Mem, Tiss, CC1–CC3 in the organisers' schedule)
+const groups = {
+  im: "Robotics and Soft Active Matter",
+  mem: "Biophysics: Membranes",
+  tiss: "Biophysics: Tissues",
+  cc1: "Computational Chemistry 1",
+  cc2: "Computational Chemistry 2",
+  cc3: "Computational Chemistry 3"
+};
 
 export const programme: ProgrammeDay[] = [
   {
@@ -39,76 +48,54 @@ export const programme: ProgrammeDay[] = [
     date: "10 October 2026",
     sessions: [
       {
-        time: "9:00–9:30",
-        title: "Invited talk — Biophysics",
-        detail:
-          "Prof. Dr. Kheya Sengupta (Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France)."
-      },
-      {
-        time: "9:30–10:00",
-        title: "Invited talk — Robotics and Soft Active Matter",
-        detail: "Prof. Dr. Nicolas Vandewalle (University of Liège, Belgium)."
-      },
-      {
-        time: "10:00–10:40",
-        title: "Early-career researcher talks",
+        time: "9:00–10:30",
+        title: "Invited talks",
         talks: [
-          "Sanjay Vinod Kumar (Computational Chemistry)",
-          "Filip Novkoski (Robotics and Soft Active Matter)"
+          "Prof. Dr. Kheya Sengupta (Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France)",
+          "Prof. Dr. Nicolas Vandewalle (University of Liège, Belgium)"
         ]
       },
       {
-        time: "10:45–11:20",
-        title: "Break"
-      },
-      {
-        time: "11:20–12:10",
-        title: "Parallel sessions",
-        rooms: [
-          {
-            name: "Conference Room 1: Robotics and Soft Active Matter",
-            talks: ["Prajol Shrestha", "Jocelyn Dupont"],
-            flashTalks: ["Gollapudi Prabhu Nithin"]
-          },
-          {
-            name: "Conference Room 3: Computational Chemistry",
-            talks: ["Rupam Gayen", "Rustam Durdyyev"],
-            flashTalks: ["Beatrice Anne Maquilan"]
-          }
+        time: "10:45–12:45",
+        title: "Pilot breakout sessions",
+        tracks: [
+          { name: groups.im, people: ["Nicolas Vandewalle", "Andreas Maier"] },
+          { name: groups.mem, people: ["Kheya Sengupta"] },
+          { name: groups.tiss, people: ["Ana-Sunčana Smith"] },
+          { name: groups.cc1, people: ["Christian Wick"] },
+          { name: groups.cc2, people: ["Rupam Gayen"] }
         ]
       },
       {
-        time: "12:15–14:00",
+        time: "12:45–14:00",
         title: "Lunch"
       },
       {
-        time: "14:00–14:30",
-        title: "Invited talk — Computational Chemistry",
-        detail: "Dr. Christian Wick (FAU Erlangen-Nürnberg, Germany)."
-      },
-      {
-        time: "14:30–15:10",
-        title: "Parallel sessions",
-        rooms: [
-          {
-            name: "Conference Room 1: Computational Chemistry",
-            talks: ["Arsha Cherian"],
-            flashTalks: ["Philippa Petersen", "Preetam Sai Krothappalli"]
-          },
-          {
-            name: "Conference Room 3: Biophysics",
-            talks: ["Nicolas Miani", "Dorijan Vulić"]
-          }
+        time: "14:00–16:00",
+        title: "Invited talk + contributed talks",
+        talks: [
+          "Invited: Dr. Sara Kaliman (Max-Planck-Institut für die Physik des Lichts, Germany)",
+          "Contributed: Filip Novkoski, Rupam Gayen and Lea Čolakić"
         ]
       },
       {
-        time: "15:15–15:50",
-        title: "Break"
+        time: "16:30–18:30",
+        title: "Parallel breakout sessions",
+        tracks: [
+          { name: groups.im, topic: "Many-body bots", people: ["Gollapudi Prabhu Nithin", "Prajol Shrestha"] },
+          { name: groups.mem, topic: "Actin waves", people: ["Nicolas Miani", "Dorijan Vulić"] },
+          { name: groups.tiss, topic: "Stretch", people: ["Mathis Grelier", "Madhura Ramani"] },
+          { name: groups.cc1, topic: "FRASCAL", people: ["Bariscan Arican", "Sampanna Pahi"] },
+          { name: groups.cc2, topic: "Milling paper drafting" }
+        ]
       },
       {
-        time: "16:50–17:30",
-        title: "Brainstorming session",
-        detail: "Open discussion and brainstorming time for the group."
+        time: "19:00–20:00",
+        title: "Dinner"
+      },
+      {
+        time: "20:00–21:00",
+        title: "PULS Group Meeting"
       }
     ]
   },
@@ -116,49 +103,59 @@ export const programme: ProgrammeDay[] = [
     date: "11 October 2026",
     sessions: [
       {
-        time: "9:00–9:30",
-        title: "Invited talk — Computational Chemistry",
-        detail: "Prof. Dr. Marco Haumann (FAU Erlangen-Nürnberg, Germany)."
-      },
-      {
-        time: "9:30–10:00",
-        title: "Invited talk — Robotics and Soft Active Matter",
-        detail: "Prof. Dr. Andreas Maier (FAU Erlangen-Nürnberg, Germany)."
-      },
-      {
-        time: "10:00–10:40",
-        title: "Early-career researcher talks",
+        time: "9:00–10:30",
+        title: "Invited talks",
         talks: [
-          "Sampanna Pahi (Computational Chemistry)",
-          "Madhura Ramani (Biophysics)"
+          "Prof. Dr. Marco Haumann (FAU Erlangen-Nürnberg, Germany)",
+          "Prof. Dr. Andreas Maier (FAU Erlangen-Nürnberg, Germany)"
         ]
       },
       {
-        time: "10:45–11:20",
-        title: "Break"
-      },
-      {
-        time: "11:20–11:50",
-        title: "Invited talk — Biophysics",
-        detail:
-          "Dr. Etienne Loiseau (Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France)."
-      },
-      {
-        time: "11:50–12:30",
-        title: "Early-career researcher talks",
-        talks: [
-          "Mathis Grelier (Biophysics)",
-          "Siddhant Mohapatra (Robotics and Soft Active Matter)"
+        time: "10:45–12:45",
+        title: "Parallel group sessions",
+        tracks: [
+          { name: groups.im, topic: "Cell", people: ["Jocelyn Dupont", "Siddhant Mohapatra"] },
+          { name: groups.mem, topic: "Patterning", people: ["Piotr Nowakowski", "Etienne Loiseau"] },
+          { name: groups.tiss, topic: "Nuclear response", people: ["Madhura Ramani", "Mathis Grelier"] },
+          {
+            name: groups.cc1,
+            topic: "Particles in pores",
+            people: ["Beatrice Anne Maquilan", "Rupam Gayen", "Rustam Durdyyev"]
+          },
+          { name: groups.cc2, topic: "FRASCAL paper writing" },
+          { name: groups.cc3, topic: "Milling proposal drafting" }
         ]
       },
       {
-        time: "12:35–14:30",
+        time: "12:45–14:00",
         title: "Lunch"
       },
       {
-        time: "14:30–",
-        title: "Free time / leisure"
-        // detail: "Free afternoon for leisure."
+        time: "14:00–16:00",
+        title: "Invited talk + contributed talks",
+        talks: [
+          "Invited: Dr. Etienne Loiseau (Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France)",
+          "Contributed: Siddhant Mohapatra, Sanjay Vinod Kumar and Rustam Durdyyev"
+        ]
+      },
+      {
+        time: "16:30–18:30",
+        title: "Workshop: Hands-on AI",
+        detail:
+          "Prof. Dr. Andreas Maier: ML applications in day-to-day research problems. (Bring your own problem!)"
+      },
+      {
+        time: "18:00–19:00",
+        title: "Parallel breakout session (continues over dinner)",
+        tracks: [{ name: groups.tiss, topic: "FK", people: ["Elina Wagner", "Narmin Abasova"] }]
+      },
+      {
+        time: "19:00–20:00",
+        title: "Dinner"
+      },
+      {
+        time: "20:00–21:00",
+        title: "Team building (beach volleyball)"
       }
     ]
   },
@@ -166,53 +163,55 @@ export const programme: ProgrammeDay[] = [
     date: "12 October 2026",
     sessions: [
       {
-        time: "9:00–9:30",
-        title: "Invited talk — Computational Chemistry",
-        detail: "Dr. Tanja Retzer (FAU Erlangen-Nürnberg, Germany)."
-      },
-      {
-        time: "9:30–10:00",
-        title: "Invited talk — Robotics and Soft Active Matter",
-        detail: "Dr. Piotr Nowakowski (Institut Ruđer Bošković, Croatia)."
-      },
-      {
-        time: "10:00–10:50",
-        title: "Parallel sessions",
-        rooms: [
-          {
-            name: "Conference Room 1: Biophysics",
-            talks: ["Narmin Abasova", "Maja Milas"],
-            flashTalks: ["Elina Wagner"]
-          },
-          {
-            name: "Conference Room 3: Computational Chemistry",
-            talks: ["Lea Čolakić", "Bariscan Arican"],
-            flashTalks: ["Christian Kreiger"]
-          }
+        time: "9:00–10:30",
+        title: "Invited talks",
+        talks: [
+          "Dr. Tanja Retzer (FAU Erlangen-Nürnberg, Germany)",
+          "Dr. Piotr Nowakowski (Institut Ruđer Bošković, Croatia)"
         ]
       },
       {
-        time: "10:55–11:30",
-        title: "Break"
+        time: "10:45–12:45",
+        title: "Parallel breakout sessions",
+        tracks: [
+          {
+            name: `${groups.im} + ${groups.tiss}`,
+            people: ["Filip Novkoski", "Madhura Ramani", "Maja Milas", "Ana-Sunčana Smith"]
+          },
+          { name: groups.mem, topic: "Group work" },
+          { name: groups.cc1, topic: "Chemprint", people: ["Mathis Grelier", "Philippa Petersen"] },
+          { name: groups.cc2, topic: "Group work" }
+        ]
       },
       {
-        time: "11:30–12:30",
-        title: "Brainstorming session",
-        detail: "Open discussion and brainstorming time for the group."
-      },
-      {
-        time: "12:30–14:00",
+        time: "12:45–14:00",
         title: "Lunch"
       },
       {
-        time: "14:00–14:30",
-        title: "Invited talk — Biophysics",
-        detail: "Dr. Sara Kaliman (Max-Planck-Institut für die Physik des Lichts, Germany)."
+        time: "14:00–16:00",
+        title: "Invited talk + contributed talks",
+        talks: [
+          "Invited: Dr. Christian Wick (FAU Erlangen-Nürnberg, Germany)",
+          "Contributed: Maja Milas, Mathis Grelier and Nicolas Miani"
+        ]
       },
       {
-        time: "14:35–17:30",
-        title: "Brainstorming + Report Writing session",
-        detail: "Continued brainstorming, extending into collaborative report writing."
+        time: "16:30–18:30",
+        title: "Workshop: Hands-on image analysis",
+        detail: "Dr. Sara Kaliman: Advanced techniques in image and data analysis."
+      },
+      {
+        time: "18:00–19:00",
+        title: "Parallel breakout session (continues over dinner)",
+        tracks: [{ name: groups.cc1, topic: "Catalysis", people: ["Arsha Cherian", "Tanja Retzer"] }]
+      },
+      {
+        time: "19:00–20:00",
+        title: "Dinner"
+      },
+      {
+        time: "20:00–21:00",
+        title: "Out in town"
       }
     ]
   },
@@ -220,15 +219,21 @@ export const programme: ProgrammeDay[] = [
     date: "13 October 2026",
     sessions: [
       {
-        time: "9:00–10:10",
-        title: "What does it take to make it in academia? + Formal End Note",
-        detail:
-          "Panel discussion with Prof. Dr. Ana-Sunčana Smith and other PIs on academic careers, followed by the formal end note of the retreat."
+        time: "9:00–11:00",
+        title: "Data management session"
       },
       {
-        time: "10:10–12:10",
-        title: "Data Management workshop (only for PULS/IRB members)"
-        // detail: "Data management session led by PULS/IRB."
+        time: "11:15–",
+        title: "Conclusion reports"
+      },
+      {
+        time: "12:45–14:00",
+        title: "Lunch"
+      },
+      {
+        time: "14:00–16:00",
+        title: "Career planning",
+        detail: "With Prof. Dr. Ana-Sunčana Smith."
       }
     ]
   }

@@ -74,18 +74,12 @@ export default function Timeline() {
                                 {talk}
                               </p>
                             ))}
-                            {session.rooms?.map((room) => (
-                              <div key={room.name} className="mt-2 text-sm text-ink/60">
-                                <p className="font-semibold text-ink/75">{room.name}</p>
-                                <p className="mt-0.5">
-                                  ECR {room.talks.length > 1 ? "talks" : "talk"} by{" "}
-                                  {listNames(room.talks)}
-                                </p>
-                                {room.flashTalks && (
-                                  <p className="mt-0.5">
-                                    Flash {room.flashTalks.length > 1 ? "talks" : "talk"} by{" "}
-                                    {listNames(room.flashTalks)}
-                                  </p>
+                            {session.tracks?.map((track) => (
+                              <div key={track.name} className="mt-2 text-sm text-ink/60">
+                                <p className="font-semibold text-ink/75">{track.name}</p>
+                                {track.topic && <p className="mt-0.5 italic">{track.topic}</p>}
+                                {track.people && (
+                                  <p className="mt-0.5">{listNames(track.people)}</p>
                                 )}
                               </div>
                             ))}
