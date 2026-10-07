@@ -1,21 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
 import { arrivalDay, breakoutGroups, days, slots, type Cell, type Track } from "@/data/programme";
 
 const dayWidths = ["26%", "33%", "22%", "12%"];
 const cellBorder = "border border-[#d9d9d4] p-2 align-top";
 
-function TrackBox({ track }: { track: Track }) {
+function TrackBox({ track, style }: { track: Track; style?: CSSProperties }) {
   return (
     <div
       title={track.group?.name}
+      style={style}
       className={`min-w-0 rounded-md border border-ink/10 p-1.5 ${track.group?.tint ?? "bg-[#f3f8f6]"}`}
     >
-      <p className="text-[11px] font-semibold uppercase leading-snug tracking-wide text-[#2f6f5e]">
-        {track.group?.code ?? track.title}
+      <p className="text-[11px] leading-snug">
+        <span className="font-semibold uppercase tracking-wide text-[#2f6f5e]">
+          {track.group?.code ?? track.title}
+        </span>
+        {track.time && <span className="text-ink/55"> · {track.time}</span>}
       </p>
-      {track.time && <p className="text-[11px] leading-snug text-ink/55">{track.time}</p>}
       {track.topic && (
         <p className="mt-1 break-words text-xs italic leading-snug text-ink/75">{track.topic}</p>
       )}
@@ -27,6 +31,18 @@ function TrackBox({ track }: { track: Track }) {
       {track.detail && (
         <p className="mt-1 break-words text-xs leading-snug text-ink/60">{track.detail}</p>
       )}
+    </div>
+  );
+}
+
+// A track that starts part-way through the slot: a spacer takes the elapsed share of the
+// cell's height and the box fills the rest (growing past its share only if its text needs it).
+function TrackItem({ track }: { track: Track }) {
+  if (!track.offset) return <TrackBox track={track} />;
+  return (
+    <div className="flex min-w-0 flex-col">
+      <div style={{ flex: `${track.offset} 1 0` }} />
+      <TrackBox track={track} style={{ flex: `${1 - track.offset} 1 0` }} />
     </div>
   );
 }
@@ -69,10 +85,11 @@ function ScheduleCell({ cell }: { cell: Cell }) {
       );
     case "tracks":
       return (
-        <td className={`${cellBorder} bg-white`}>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(3.5rem,1fr))] gap-1">
+        // h-px gives the cell a definite height so the grid's h-full stretches to the full row
+        <td className={`${cellBorder} h-px bg-white`}>
+          <div className="grid h-full grid-cols-[repeat(auto-fit,minmax(3.5rem,1fr))] gap-1">
             {cell.tracks.map((track) => (
-              <TrackBox key={track.group?.code ?? track.title} track={track} />
+              <TrackItem key={track.group?.code ?? track.title} track={track} />
             ))}
           </div>
         </td>
@@ -147,7 +164,7 @@ export default function Timeline() {
             </thead>
             <tbody>
               {slots.map((slot) => (
-                <tr key={slot.time}>
+                <tr key={slot.time} style={{ height: slot.minHeight }}>
                   <th className="sticky left-0 z-10 border border-[#d9d9d4] bg-[#fafaf8] p-2 align-top font-normal">
                     <p className="text-sm font-semibold tabular-nums text-ink/60">{slot.time}</p>
                     {slot.note && (

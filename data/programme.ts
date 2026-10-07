@@ -8,6 +8,7 @@ export type Track = {
   group?: Group;
   title?: string; // heading for boxes that are not group sessions
   time?: string; // when it differs from the slot's time
+  offset?: number; // fraction of the slot that passes before this track starts
   topic?: string;
   people?: string[];
   detail?: string;
@@ -23,6 +24,7 @@ export type Cell =
 export type Slot = {
   time: string;
   note?: string;
+  minHeight?: string; // leaves room for offset tracks to start part-way down the row
   cells: Cell[]; // one per entry in `days`
 };
 
@@ -70,7 +72,7 @@ export const slots: Slot[] = [
   },
   {
     time: "10:45–12:45",
-    note: "Breakout sessions",
+    note: "Pilot breakout sessions",
     cells: [
       {
         kind: "tracks",
@@ -148,6 +150,7 @@ export const slots: Slot[] = [
   {
     time: "16:30–18:30",
     note: "Breakout sessions and hands-on workshops",
+    minHeight: "26rem",
     cells: [
       {
         kind: "tracks",
@@ -170,6 +173,7 @@ export const slots: Slot[] = [
           {
             group: groups.tiss,
             time: "18:00–19:00 + dinner",
+            offset: 0.75,
             topic: "FK",
             people: ["Elina Wagner", "Narmin Abasova"]
           }
@@ -186,6 +190,7 @@ export const slots: Slot[] = [
           {
             group: groups.cc1,
             time: "18:00–19:00 + dinner",
+            offset: 0.75,
             topic: "Catalysis",
             people: ["Arsha Cherian", "Tanja Retzer"]
           }
