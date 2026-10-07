@@ -1,28 +1,30 @@
-export type ProgrammeDay = {
-  date: string;
-  sessions: {
-    time: string;
-    title: string;
-    detail?: string;
-    talks?: string[];
-    tracks?: {
-      group: Group;
-      topic?: string;
-      people?: string[];
-    }[];
-  }[];
-};
-
-type Group = {
+export type Group = {
   code: string;
   name: string;
   tint: string;
 };
 
-export const talkFormats = [
-  { type: "Invited talk", duration: "approx. 30 mins" },
-  { type: "Contributed talk", duration: "approx. 15 mins" }
-];
+export type Track = {
+  group?: Group;
+  title?: string; // heading for boxes that are not group sessions
+  time?: string; // when it differs from the slot's time
+  topic?: string;
+  people?: string[];
+  detail?: string;
+};
+
+export type Cell =
+  | { kind: "talks"; invited: string[]; contributed?: string[] }
+  | { kind: "break"; label: string }
+  | { kind: "event"; label: string }
+  | { kind: "tracks"; tracks: Track[] }
+  | { kind: "empty" };
+
+export type Slot = {
+  time: string;
+  note?: string;
+  cells: Cell[]; // one per entry in `days`
+};
 
 // Parallel group-session tracks, tinted with the same colours as the organisers' schedule
 const groups = {
@@ -36,36 +38,42 @@ const groups = {
 
 export const breakoutGroups: Group[] = Object.values(groups);
 
-export const programme: ProgrammeDay[] = [
+export const arrivalDay = {
+  day: "Friday, 9 October",
+  sessions: [
+    { time: "18:00–19:00", title: "Introductory note" },
+    { time: "19:00–21:30", title: "Welcome cocktail + dinner" }
+  ]
+};
+
+export const days = [
+  "Saturday, 10 October",
+  "Sunday, 11 October",
+  "Monday, 12 October",
+  "Tuesday, 13 October"
+];
+
+const lunch: Cell = { kind: "break", label: "Lunch" };
+const dinner: Cell = { kind: "break", label: "Dinner" };
+const empty: Cell = { kind: "empty" };
+
+export const slots: Slot[] = [
   {
-    date: "9 October 2026",
-    sessions: [
-      {
-        time: "18:00–19:00",
-        title: "Introductory Note",
-        detail: "Opening remarks introducing the retreat programme."
-      },
-      {
-        time: "19:00–21:30",
-        title: "Welcome cocktail + dinner",
-        detail: "Informal welcome reception and dinner to open the retreat."
-      }
+    time: "9:00–10:30",
+    note: "Invited talks (approx. 30 min each)",
+    cells: [
+      { kind: "talks", invited: ["Prof. Dr. Kheya Sengupta", "Prof. Dr. Nicolas Vandewalle"] },
+      { kind: "talks", invited: ["Prof. Dr. Marco Haumann", "Prof. Dr. Andreas Maier"] },
+      { kind: "talks", invited: ["Dr. Tanja Retzer", "Dr. Piotr Nowakowski"] },
+      { kind: "tracks", tracks: [{ title: "Data management session", time: "9:00–11:00" }] }
     ]
   },
   {
-    date: "10 October 2026",
-    sessions: [
+    time: "10:45–12:45",
+    note: "Breakout sessions",
+    cells: [
       {
-        time: "9:00–10:30",
-        title: "Invited talks",
-        talks: [
-          "Prof. Dr. Kheya Sengupta (Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France)",
-          "Prof. Dr. Nicolas Vandewalle (University of Liège, Belgium)"
-        ]
-      },
-      {
-        time: "10:45–12:45",
-        title: "Pilot breakout sessions",
+        kind: "tracks",
         tracks: [
           { group: groups.im, people: ["Nicolas Vandewalle", "Andreas Maier"] },
           { group: groups.mem, people: ["Kheya Sengupta"] },
@@ -75,52 +83,7 @@ export const programme: ProgrammeDay[] = [
         ]
       },
       {
-        time: "12:45–14:00",
-        title: "Lunch"
-      },
-      {
-        time: "14:00–16:00",
-        title: "Invited talk + contributed talks",
-        talks: [
-          "Invited: Dr. Sara Kaliman (Max-Planck-Institut für die Physik des Lichts, Germany)",
-          "Contributed: Filip Novkoski, Rupam Gayen and Lea Čolakić"
-        ]
-      },
-      {
-        time: "16:30–18:30",
-        title: "Parallel breakout sessions",
-        tracks: [
-          { group: groups.im, topic: "Many-body bots", people: ["Gollapudi Prabhu Nithin", "Prajol Shrestha"] },
-          { group: groups.mem, topic: "Actin waves", people: ["Nicolas Miani", "Dorijan Vulić"] },
-          { group: groups.tiss, topic: "Stretch", people: ["Mathis Grelier", "Madhura Ramani"] },
-          { group: groups.cc1, topic: "FRASCAL", people: ["Bariscan Arican", "Sampanna Pahi"] },
-          { group: groups.cc2, topic: "Milling paper drafting" }
-        ]
-      },
-      {
-        time: "19:00–20:00",
-        title: "Dinner"
-      },
-      {
-        time: "20:00–21:00",
-        title: "PULS Group Meeting"
-      }
-    ]
-  },
-  {
-    date: "11 October 2026",
-    sessions: [
-      {
-        time: "9:00–10:30",
-        title: "Invited talks",
-        talks: [
-          "Prof. Dr. Marco Haumann (FAU Erlangen-Nürnberg, Germany)",
-          "Prof. Dr. Andreas Maier (FAU Erlangen-Nürnberg, Germany)"
-        ]
-      },
-      {
-        time: "10:45–12:45",
-        title: "Parallel breakout sessions",
+        kind: "tracks",
         tracks: [
           { group: groups.im, topic: "Cell", people: ["Jocelyn Dupont", "Siddhant Mohapatra"] },
           { group: groups.mem, topic: "Patterning", people: ["Piotr Nowakowski", "Etienne Loiseau"] },
@@ -135,52 +98,7 @@ export const programme: ProgrammeDay[] = [
         ]
       },
       {
-        time: "12:45–14:00",
-        title: "Lunch"
-      },
-      {
-        time: "14:00–16:00",
-        title: "Invited talk + contributed talks",
-        talks: [
-          "Invited: Dr. Etienne Loiseau (Centre Interdisciplinaire de Nanoscience de Marseille (CINaM), France)",
-          "Contributed: Siddhant Mohapatra, Sanjay Vinod Kumar and Rustam Durdyyev"
-        ]
-      },
-      {
-        time: "16:30–18:30",
-        title: "Workshop: Hands-on AI",
-        detail:
-          "Prof. Dr. Andreas Maier: ML applications in day-to-day research problems. (Bring your own problem!)"
-      },
-      {
-        time: "18:00–19:00",
-        title: "Parallel breakout session (continues over dinner)",
-        tracks: [{ group: groups.tiss, topic: "FK", people: ["Elina Wagner", "Narmin Abasova"] }]
-      },
-      {
-        time: "19:00–20:00",
-        title: "Dinner"
-      },
-      {
-        time: "20:00–21:00",
-        title: "Team building (beach volleyball)"
-      }
-    ]
-  },
-  {
-    date: "12 October 2026",
-    sessions: [
-      {
-        time: "9:00–10:30",
-        title: "Invited talks",
-        talks: [
-          "Dr. Tanja Retzer (FAU Erlangen-Nürnberg, Germany)",
-          "Dr. Piotr Nowakowski (Institut Ruđer Bošković, Croatia)"
-        ]
-      },
-      {
-        time: "10:45–12:45",
-        title: "Parallel breakout sessions",
+        kind: "tracks",
         tracks: [
           {
             group: {
@@ -195,58 +113,98 @@ export const programme: ProgrammeDay[] = [
           { group: groups.cc2, topic: "Group work" }
         ]
       },
+      { kind: "tracks", tracks: [{ title: "Conclusion reports", time: "From 11:15" }] }
+    ]
+  },
+  {
+    time: "12:45–14:00",
+    cells: [lunch, lunch, lunch, lunch]
+  },
+  {
+    time: "14:00–16:00",
+    note: "Invited talk (approx. 30 min) + contributed talks (approx. 15 min each)",
+    cells: [
       {
-        time: "12:45–14:00",
-        title: "Lunch"
+        kind: "talks",
+        invited: ["Dr. Sara Kaliman"],
+        contributed: ["Filip Novkoski", "Rupam Gayen", "Lea Čolakić"]
       },
       {
-        time: "14:00–16:00",
-        title: "Invited talk + contributed talks",
-        talks: [
-          "Invited: Dr. Christian Wick (FAU Erlangen-Nürnberg, Germany)",
-          "Contributed: Maja Milas, Mathis Grelier and Nicolas Miani"
-        ]
+        kind: "talks",
+        invited: ["Dr. Etienne Loiseau"],
+        contributed: ["Siddhant Mohapatra", "Sanjay Vinod Kumar", "Rustam Durdyyev"]
       },
       {
-        time: "16:30–18:30",
-        title: "Workshop: Hands-on image analysis",
-        detail: "Dr. Sara Kaliman: Advanced techniques in image and data analysis."
+        kind: "talks",
+        invited: ["Dr. Christian Wick"],
+        contributed: ["Maja Milas", "Mathis Grelier", "Nicolas Miani"]
       },
       {
-        time: "18:00–19:00",
-        title: "Parallel breakout session (continues over dinner)",
-        tracks: [{ group: groups.cc1, topic: "Catalysis", people: ["Arsha Cherian", "Tanja Retzer"] }]
-      },
-      {
-        time: "19:00–20:00",
-        title: "Dinner"
-      },
-      {
-        time: "20:00–21:00",
-        title: "Out in town"
+        kind: "tracks",
+        tracks: [{ title: "Career planning", people: ["Prof. Dr. Ana-Sunčana Smith"] }]
       }
     ]
   },
   {
-    date: "13 October 2026",
-    sessions: [
+    time: "16:30–18:30",
+    note: "Breakout sessions and hands-on workshops",
+    cells: [
       {
-        time: "9:00–11:00",
-        title: "Data management session"
+        kind: "tracks",
+        tracks: [
+          { group: groups.im, topic: "Many-body bots", people: ["Gollapudi Prabhu Nithin", "Prajol Shrestha"] },
+          { group: groups.mem, topic: "Actin waves", people: ["Nicolas Miani", "Dorijan Vulić"] },
+          { group: groups.tiss, topic: "Stretch", people: ["Mathis Grelier", "Madhura Ramani"] },
+          { group: groups.cc1, topic: "FRASCAL", people: ["Bariscan Arican", "Sampanna Pahi"] },
+          { group: groups.cc2, topic: "Milling paper drafting" }
+        ]
       },
       {
-        time: "11:15–",
-        title: "Conclusion reports"
+        kind: "tracks",
+        tracks: [
+          {
+            title: "Hands-on AI",
+            people: ["Prof. Dr. Andreas Maier"],
+            detail: "ML applications in day-to-day research problems. Bring your own problem!"
+          },
+          {
+            group: groups.tiss,
+            time: "18:00–19:00 + dinner",
+            topic: "FK",
+            people: ["Elina Wagner", "Narmin Abasova"]
+          }
+        ]
       },
       {
-        time: "12:45–14:00",
-        title: "Lunch"
+        kind: "tracks",
+        tracks: [
+          {
+            title: "Hands-on image analysis",
+            people: ["Dr. Sara Kaliman"],
+            detail: "Advanced techniques in image and data analysis."
+          },
+          {
+            group: groups.cc1,
+            time: "18:00–19:00 + dinner",
+            topic: "Catalysis",
+            people: ["Arsha Cherian", "Tanja Retzer"]
+          }
+        ]
       },
-      {
-        time: "14:00–16:00",
-        title: "Career planning",
-        detail: "With Prof. Dr. Ana-Sunčana Smith."
-      }
+      empty
+    ]
+  },
+  {
+    time: "19:00–20:00",
+    cells: [dinner, dinner, dinner, empty]
+  },
+  {
+    time: "20:00–21:00",
+    cells: [
+      { kind: "event", label: "PULS Group Meeting" },
+      { kind: "event", label: "Team building (beach volleyball)" },
+      { kind: "event", label: "Out in town" },
+      empty
     ]
   }
 ];
