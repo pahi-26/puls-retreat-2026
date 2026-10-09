@@ -129,12 +129,12 @@ export const slots: Slot[] = [
       {
         kind: "talks",
         invited: ["Dr. Sara Kaliman"],
-        contributed: ["Filip Novkoski", "Rupam Gayen", "Lea Čolakić"]
+        contributed: ["Siddhant Mohapatra", "Rupam Gayen", "Lea Čolakić"]
       },
       {
         kind: "talks",
         invited: ["Dr. Etienne Loiseau"],
-        contributed: ["Siddhant Mohapatra", "Sanjay Vinod Kumar", "Rustam Durdyyev"]
+        contributed: ["Filip Novkoski", "Sanjay Vinod Kumar", "Rustam Durdyyev"]
       },
       {
         kind: "talks",
