@@ -35,7 +35,8 @@ const groups = {
   tiss: { code: "TISS", name: "Biophysics: Tissues", tint: "bg-[#efe1fb]" },
   cc1: { code: "CC1", name: "Computational Chemistry 1", tint: "bg-[#fff4e5]" },
   cc2: { code: "CC2", name: "Computational Chemistry 2", tint: "bg-[#fde2e4]" },
-  cc3: { code: "CC3", name: "Computational Chemistry 3", tint: "bg-[#e5e5e5]" }
+  cc3: { code: "CC3", name: "Computational Chemistry 3", tint: "bg-[#e5e5e5]" },
+  cc4: { code: "CC4", name: "Computational Chemistry 4", tint: "bg-[#e3f4d7]" }
 } satisfies Record<string, Group>;
 
 export const breakoutGroups: Group[] = Object.values(groups);
@@ -80,8 +81,10 @@ export const slots: Slot[] = [
           { group: groups.im, people: ["Nicolas Vandewalle", "Andreas Maier"] },
           { group: groups.mem, people: ["Kheya Sengupta"] },
           { group: groups.tiss, people: ["Ana-Sunčana Smith"] },
-          { group: groups.cc1, people: ["Christian Wick"] },
-          { group: groups.cc2, people: ["Rupam Gayen"] }
+          {
+            group: { code: "CC", name: "Computational Chemistry", tint: groups.cc1.tint },
+            people: ["Christian Wick"]
+          }
         ]
       },
       {
@@ -96,7 +99,8 @@ export const slots: Slot[] = [
             people: ["Beatrice Anne Maquilan", "Rupam Gayen", "Rustam Durdyyev"]
           },
           { group: groups.cc2, topic: "FRASCAL paper writing" },
-          { group: groups.cc3, topic: "Milling proposal drafting" }
+          { group: groups.cc3, topic: "Milling proposal drafting" },
+          { group: groups.cc4, topic: "Catalysis" }
         ]
       },
       {
