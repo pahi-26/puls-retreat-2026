@@ -93,14 +93,14 @@ export const slots: Slot[] = [
           { group: groups.im, topic: "Cell", people: ["Jocelyn Dupont", "Siddhant Mohapatra"] },
           { group: groups.mem, topic: "Patterning", people: ["Piotr Nowakowski", "Etienne Loiseau"] },
           { group: groups.tiss, topic: "Nuclear response", people: ["Madhura Ramani", "Mathis Grelier"] },
+          { group: groups.cc1, topic: "Catalysis" },
           {
-            group: groups.cc1,
+            group: groups.cc2,
             topic: "Particles in pores",
             people: ["Beatrice Anne Maquilan", "Rupam Gayen", "Rustam Durdyyev"]
           },
-          { group: groups.cc2, topic: "FRASCAL paper writing" },
-          { group: groups.cc3, topic: "Milling proposal drafting" },
-          { group: groups.cc4, topic: "Catalysis" }
+          { group: groups.cc3, topic: "FRASCAL paper writing" },
+          { group: groups.cc4, topic: "Milling proposal drafting" }
         ]
       },
       {
@@ -115,8 +115,8 @@ export const slots: Slot[] = [
             people: ["Filip Novkoski", "Madhura Ramani", "Maja Milas", "Ana-Sunčana Smith"]
           },
           { group: groups.mem, topic: "Group work" },
-          { group: groups.cc1, topic: "Chemprint", people: ["Mathis Grelier", "Philippa Petersen"] },
-          { group: groups.cc2, topic: "Group work" }
+          { group: groups.cc3, topic: "Chemprint", people: ["Mathis Grelier", "Philippa Petersen"] },
+          { group: groups.cc4, topic: "Group work" }
         ]
       },
       { kind: "tracks", tracks: [{ title: "Conclusion reports", time: "From 11:15" }] }
@@ -133,12 +133,12 @@ export const slots: Slot[] = [
       {
         kind: "talks",
         invited: ["Dr. Sara Kaliman"],
-        contributed: ["Siddhant Mohapatra", "Rupam Gayen", "Lea Čolakić"]
+        contributed: ["Dr. Siddhant Mohapatra", "Rupam Gayen", "Lea Čolakić"]
       },
       {
         kind: "talks",
         invited: ["Dr. Etienne Loiseau"],
-        contributed: ["Filip Novkoski", "Sanjay Vinod Kumar", "Rustam Durdyyev"]
+        contributed: ["Dr. Filip Novkoski", "Dr. Sanjay Vinod Kumar", "Dr. Rustam Durdyyev"]
       },
       {
         kind: "talks",
@@ -162,8 +162,8 @@ export const slots: Slot[] = [
           { group: groups.im, topic: "Many-body bots", people: ["Gollapudi Prabhu Nithin", "Prajol Shrestha"] },
           { group: groups.mem, topic: "Actin waves", people: ["Nicolas Miani", "Dorijan Vulić"] },
           { group: groups.tiss, topic: "Stretch", people: ["Mathis Grelier", "Madhura Ramani"] },
-          { group: groups.cc1, topic: "FRASCAL", people: ["Bariscan Arican", "Sampanna Pahi"] },
-          { group: groups.cc2, topic: "Milling paper drafting" }
+          { group: groups.cc2, topic: "Milling paper drafting" },
+          { group: groups.cc3, topic: "FRASCAL", people: ["Bariscan Arican", "Sampanna Pahi"] },
         ]
       },
       {
