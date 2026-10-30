@@ -35,8 +35,8 @@ const groups = {
   tiss: { code: "TISS", name: "Biophysics: Tissues", tint: "bg-[#efe1fb]" },
   cc1: { code: "CC1", name: "Computational Chemistry 1", tint: "bg-[#fff4e5]" },
   cc2: { code: "CC2", name: "Computational Chemistry 2", tint: "bg-[#fde2e4]" },
-  cc3: { code: "CC3", name: "Computational Chemistry 3", tint: "bg-[#e5e5e5]" },
-  cc4: { code: "CC4", name: "Computational Chemistry 4", tint: "bg-[#e3f4d7]" }
+  ch: { code: "CH", name: "Chemprint session", tint: "bg-[#e5e5e5]" },
+  cc3: { code: "CC3", name: "Computational Chemistry 3", tint: "bg-[#e3f4d7]" }
 } satisfies Record<string, Group>;
 
 export const breakoutGroups: Group[] = Object.values(groups);
@@ -82,7 +82,7 @@ export const slots: Slot[] = [
           { group: groups.mem, people: ["Kheya Sengupta"] },
           { group: groups.tiss, people: ["Ana-Sunčana Smith"] },
           {
-            group: { code: "CC", name: "Computational Chemistry", tint: groups.cc1.tint },
+            group: { code: "CC", name: "Computational Chemistry (Chemprint)", tint: groups.cc1.tint },
             people: ["Christian Wick"]
           }
         ]
@@ -100,7 +100,7 @@ export const slots: Slot[] = [
             people: ["Beatrice Anne Maquilan", "Rupam Gayen", "Rustam Durdyyev"]
           },
           { group: groups.cc3, topic: "FRASCAL paper writing" },
-          { group: groups.cc4, topic: "Milling proposal drafting" }
+          { group: groups.ch, topic: "Milling proposal drafting" }
         ]
       },
       {
@@ -115,8 +115,8 @@ export const slots: Slot[] = [
             people: ["Filip Novkoski", "Madhura Ramani", "Maja Milas", "Ana-Sunčana Smith"]
           },
           { group: groups.mem, topic: "Group work" },
-          { group: groups.cc3, topic: "Chemprint", people: ["Mathis Grelier", "Philippa Petersen"] },
-          { group: groups.cc4, topic: "Group work" }
+          { group: groups.ch, topic: "Chemprint", people: ["Mathis Grelier", "Philippa Petersen"] },
+          { group: groups.cc3, topic: "Group work" }
         ]
       },
       { kind: "tracks", tracks: [{ title: "Conclusion reports", time: "From 11:15" }] }
@@ -170,9 +170,9 @@ export const slots: Slot[] = [
         kind: "tracks",
         tracks: [
           {
-            title: "Hands-on AI",
+            title: "Chemprint Hands-on Workshop",
             people: ["Prof. Dr. Andreas Maier"],
-            detail: "ML applications in day-to-day research problems. Bring your own problem!"
+            detail: "AI/ML applications in day-to-day research problems. Bring your own problem!"
           },
           {
             group: groups.tiss,
@@ -187,7 +187,7 @@ export const slots: Slot[] = [
         kind: "tracks",
         tracks: [
           {
-            title: "Hands-on image analysis",
+            title: "Chemprint Hands-on Workshop",
             people: ["Dr. Sara Kaliman"],
             detail: "Advanced techniques in image and data analysis."
           },

@@ -29,6 +29,15 @@ export default function Navbar() {
             className="h-auto w-[120px] md:w-[148px]"
             priority
           />
+          <span className="h-6 w-px bg-ink/15" aria-hidden="true" />
+          <Image
+            src="/images/research/ChemPrint_logo-768x398.png"
+            alt="ChemPrint logo"
+            width={768}
+            height={398}
+            className="h-[31px] w-auto md:h-[38px]"
+            priority
+          />
         </a>
         <div className="hidden items-center gap-6 md:flex">
           {links.map((link) => (
