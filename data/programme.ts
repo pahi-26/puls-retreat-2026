@@ -32,7 +32,7 @@ export type Slot = {
 const groups = {
   im: { code: "NESM", name: "Nonequilibrium systems with memory", tint: "bg-[#d6e6ff]" },
   mem: { code: "MEM", name: "Membranes", tint: "bg-[#f3f8f6]" },
-  tiss: { code: "NnG", name: "Nucleation and Growth", tint: "bg-[#efe1fb]" },
+  tiss: { code: "NG", name: "Nucleation and Growth", tint: "bg-[#efe1fb]" },
   cc1: { code: "CM1", name: "Computational Methods 1", tint: "bg-[#fff4e5]" },
   cc2: { code: "CM2", name: "Computational Methods 2", tint: "bg-[#fde2e4]" },
   ch: { code: "CH", name: "Chemprint session", tint: "bg-[#e5e5e5]" },
@@ -82,7 +82,7 @@ export const slots: Slot[] = [
           { group: groups.mem, people: ["Kheya Sengupta"] },
           { group: groups.tiss, people: ["Ana-Sunčana Smith"] },
           {
-            group: { code: "CC", name: "Computational Chemistry (Chemprint)", tint: groups.cc1.tint },
+            group: { code: "CM1", name: "Computational Methods", tint: groups.cc1.tint },
             people: ["Christian Wick"]
           }
         ]
