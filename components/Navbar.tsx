@@ -20,13 +20,13 @@ export default function Navbar() {
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <nav className="glass-panel flex w-full max-w-6xl items-center justify-between rounded-full px-5 py-3 md:px-7">
-        <a href="#top" className="flex items-center gap-3 text-sm tracking-[0.24em] text-ink">
+        <a href="#top" className="flex items-center gap-2 text-sm tracking-[0.24em] text-ink sm:gap-3">
           <Image
             src="/images/research/PULSlogo.png"
             alt="PULS logo"
             width={148}
             height={32}
-            className="h-auto w-[120px] md:w-[148px]"
+            className="h-auto w-[68px] sm:w-[100px] xl:w-[148px]"
             priority
           />
           <span className="h-6 w-px bg-ink/15" aria-hidden="true" />
@@ -35,11 +35,27 @@ export default function Navbar() {
             alt="ChemPrint logo"
             width={768}
             height={398}
-            className="h-[31px] w-auto md:h-[38px]"
+            className="h-5 w-auto sm:h-[28px] xl:h-[38px]"
+            priority
+          />
+          <Image
+            src="/images/research/hrzz_logo.jpg"
+            alt="HRZZ (Croatian Science Foundation) logo"
+            width={800}
+            height={333}
+            className="h-5 w-auto mix-blend-multiply sm:h-[28px] xl:h-[38px]"
+            priority
+          />
+          <Image
+            src="/images/research/dfg_logo.png"
+            alt="DFG (Deutsche Forschungsgemeinschaft) logo"
+            width={738}
+            height={93}
+            className="h-2.5 w-auto sm:h-3.5 xl:h-[18px]"
             priority
           />
         </a>
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
@@ -52,7 +68,7 @@ export default function Navbar() {
         </div>
         <a
           href="#programme"
-          className="rounded-full border border-ink/10 bg-white/80 px-4 py-2 text-sm text-ink shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          className="hidden rounded-full border border-ink/10 bg-white/80 px-4 py-2 text-sm text-ink shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:block"
         >
           Explore Programme
         </a>

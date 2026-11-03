@@ -30,13 +30,13 @@ export type Slot = {
 
 // Parallel group-session tracks, tinted with the same colours as the organisers' schedule
 const groups = {
-  im: { code: "IM", name: "Intelligent Materials", tint: "bg-[#d6e6ff]" },
-  mem: { code: "MEM", name: "Biophysics: Membranes", tint: "bg-[#f3f8f6]" },
-  tiss: { code: "TISS", name: "Biophysics: Tissues", tint: "bg-[#efe1fb]" },
-  cc1: { code: "CC1", name: "Computational Chemistry 1", tint: "bg-[#fff4e5]" },
-  cc2: { code: "CC2", name: "Computational Chemistry 2", tint: "bg-[#fde2e4]" },
+  im: { code: "NESM", name: "Nonequilibrium systems with memory", tint: "bg-[#d6e6ff]" },
+  mem: { code: "MEM", name: "Membranes", tint: "bg-[#f3f8f6]" },
+  tiss: { code: "NnG", name: "Nucleation and Growth", tint: "bg-[#efe1fb]" },
+  cc1: { code: "CM1", name: "Computational Methods 1", tint: "bg-[#fff4e5]" },
+  cc2: { code: "CM2", name: "Computational Methods 2", tint: "bg-[#fde2e4]" },
   ch: { code: "CH", name: "Chemprint session", tint: "bg-[#e5e5e5]" },
-  cc3: { code: "CC3", name: "Computational Chemistry 3", tint: "bg-[#e3f4d7]" }
+  cc3: { code: "CM3", name: "Computational Methods 3", tint: "bg-[#e3f4d7]" }
 } satisfies Record<string, Group>;
 
 export const breakoutGroups: Group[] = Object.values(groups);

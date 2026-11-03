@@ -1,7 +1,7 @@
 export const themes = [
   {
-    title: "Biophysics",
-    copy: "Exploring living matter through physical principles, structure, and dynamics.",
+    title: "Nucleation and growth in 2D systems",
+    copy: "Exploring natural systems through physical principles, structure, and dynamics.",
     images: [
       {
         src: "/images/research/Cluster.png",
@@ -24,8 +24,8 @@ export const themes = [
     ]
   },
   {
-    title: "Computational Chemistry",
-    copy: "Connecting simulation, molecular modelling, and chemical insight to life sciences.",
+    title: "Computational Methods",
+    copy: "Connecting simulation, molecular modelling, and chemical insight to physical sciences.",
     images: [
       {
         src: "/images/research/ball_milling_collision.png",
@@ -48,14 +48,14 @@ export const themes = [
     ]
   },
   {
-    title: "Robotics and Soft Active Matter",
-    copy: "Designing and building robots that can interact with and adapt to their environment.",
+    title: "Nonequilibrium systems with memory",
+    copy: "Designing and studying systems which can retain information about their past states.",
     images: [
       {
-        src: "/images/research/graspion.png",
-        caption: "Grasp-ion bot",
-        alt: "Close-up photograph of the Grasp-ion robot",
-        imageClassName: "object-cover object-center scale-100"
+        src: "/images/research/am2c16943_0004.svg",
+        caption: "AFM images over successive cycles",
+        alt: "Four atomic force microscopy panels showing a bare Si wafer and the surface after 1, 2 and 3 cycles, with surface features increasing in density",
+        imageClassName: "object-contain object-center scale-100"
       },
       {
         src: "/images/research/cell_ratchet.png",

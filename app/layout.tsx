@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Chemprint PULS Workshop 2026",
+  title: "Modelling 2D materials",
   description:
-    "Chemprint PULS Workshop 2026 in Zadar, Croatia."
+    "Modelling 2D materials workshop in Zadar, Croatia."
 };
 
 export default function RootLayout({

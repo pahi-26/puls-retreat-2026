@@ -303,7 +303,7 @@ export default function Hero() {
           >
             <p className="section-eyebrow">Interdisciplinary Scientific Workshop</p>
             <h1 className="mt-6 text-5xl font-medium leading-[0.95] sm:text-6xl lg:text-7xl">
-              Chemprint PULS Workshop 2026
+              Modelling 2D materials
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-ink/72 sm:text-xl">
               Zadar, Croatia • 9–13 October 2026

@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="section-shell py-10">
       <div className="flex flex-col gap-4 border-t border-ink/10 pt-6 text-sm text-ink/56 md:flex-row md:items-center md:justify-between">
         <p>sampanna.pahi@fau.de</p>
-        <p>PULS Retreat 2026</p>
+        <p>Modelling 2D materials</p>
         <div className="flex gap-4">
           {socialLinks.map((link) => (
             <a
