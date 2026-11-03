@@ -309,10 +309,11 @@ export default function Hero() {
               Zadar, Croatia • 9–13 October 2026
             </p>
             <p className="mt-8 max-w-2xl text-base text-ink/68 md:text-lg">
-              An interdisciplinary workshop for researchers in biophysics,
-              computational chemistry, and related fields to share ideas,
-              deepen collaborations, and explore new directions in living,
-              active, and functional materials across the life sciences.
+              An interdisciplinary workshop for researchers modelling 2D
+              materials and related systems to share ideas, deepen
+              collaborations, and explore new directions in nucleation and
+              growth, computational methods, and nonequilibrium systems with
+              memory.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
